@@ -84,7 +84,7 @@ At least 10 enemies.
 ```
 
 ```
-Have a map selector with at least 3 map.
+Have a map selector with at least 3 maps.
 ```
 
 ```
@@ -96,7 +96,7 @@ Have a map builder.
 ```
 
 ```
-Sudo-infinite round numbers.
+Pseudo-infinite round numbers.
 ```
 
 ```
