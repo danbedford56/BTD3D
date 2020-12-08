@@ -3,7 +3,7 @@
 public class BuildManager : MonoBehaviour
 {
     public static BuildManager instance;
-    public GameObject defaultTower;
+    public GameObject defaultTower; //make new variables for each new tower
     private GameObject towerToBuild;
 
     void Awake()
@@ -16,13 +16,14 @@ public class BuildManager : MonoBehaviour
         instance = this;
     }
 
-    void Start()
-    {
-        towerToBuild = defaultTower;
-    }
-
+  
     public GameObject GetTowerToBuid()
     {
         return towerToBuild;
+    }
+
+    public void SetTowerToBuild(GameObject tower)
+    {
+        towerToBuild = tower;
     }
 }
