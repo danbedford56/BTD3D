@@ -74,7 +74,12 @@ public class tower : MonoBehaviour
 
     void Shoot()
     {
-        Debug.Log("Shoot");
+        GameObject bulletToShoot = (GameObject)Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+        Bullet bullet = bulletToShoot.GetComponent<Bullet>();
+        if (bullet != null)
+        {
+            bullet.FindTarget(target);
+        }
     }
 
     void OnDrawGizmosSelected()
