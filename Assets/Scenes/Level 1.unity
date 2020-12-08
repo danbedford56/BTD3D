@@ -4630,8 +4630,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -300, y: -125}
-  m_SizeDelta: {x: 599.99475, y: -249.99997}
+  m_AnchoredPosition: {x: -232.09, y: -125}
+  m_SizeDelta: {x: 464.2107, y: -249.99997}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &517810881
 MonoBehaviour:
@@ -4689,7 +4689,7 @@ MonoBehaviour:
     m_Top: 0
     m_Bottom: 0
   m_ChildAlignment: 3
-  m_Spacing: 0
+  m_Spacing: 10
   m_ChildForceExpandWidth: 0
   m_ChildForceExpandHeight: 0
   m_ChildControlWidth: 0
@@ -4709,6 +4709,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e6a2e334ede540b29a08aa9a17c1d40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  turret:
+    prefab: {fileID: 2508148441631401046, guid: 13db209a4a51c4c62b78a4a6b052d7a7, type: 3}
+    cost: 100
 --- !u!1001 &518863103
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5410,6 +5413,7 @@ GameObject:
   - component: {fileID: 630782939}
   - component: {fileID: 630782938}
   - component: {fileID: 630782940}
+  - component: {fileID: 630782941}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -5457,7 +5461,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66cec38e9e4b046d1be4756c446ea656, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defaultTower: {fileID: 2508148441631401046, guid: 13db209a4a51c4c62b78a4a6b052d7a7, type: 3}
+--- !u!114 &630782941
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 630782937}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69f4caa84c81049b685802fa76f7fa38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingMonees: 400
 --- !u!1001 &633899965
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8809,6 +8825,10 @@ PrefabInstance:
     - target: {fileID: 604217891878080182, guid: 69e9ea3c770c143d99ab13319468fa84, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4057345573915583179, guid: 69e9ea3c770c143d99ab13319468fa84, type: 3}
+      propertyPath: tower
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 69e9ea3c770c143d99ab13319468fa84, type: 3}
@@ -16552,7 +16572,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6659846373819117578, guid: 28a3c4a83e48649db8089ce537b582a3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: GetTurret
+      value: SelectTurret
       objectReference: {fileID: 0}
     - target: {fileID: 6659846373819117578, guid: 28a3c4a83e48649db8089ce537b582a3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
