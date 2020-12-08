@@ -6,8 +6,16 @@ public class tower : MonoBehaviour
 {
 
     private Transform target;
-    public float range;
 
+    [Header("Turret Attributes")]
+    public float fireRate = 1f;
+    private float fireCountdown = 0f;
+    public float range;
+    [Header("Setup")]
+    public GameObject bulletPrefab;
+    public Transform firePoint;
+    public string enemyTag = "Enemy";
+    public float turnSpeed = 10f;
     public Transform rotationPoint;
 
     private void Start()
@@ -17,7 +25,7 @@ public class tower : MonoBehaviour
 
     void UpdateTarget()
     {
-        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag(enemyTag);
         GameObject nearestEnemy = null;
         float smallestDistance = Mathf.Infinity;
         foreach (GameObject enemy in enemies)
@@ -49,9 +57,29 @@ public class tower : MonoBehaviour
         Vector3 direction = target.position - transform.position;
 
         Quaternion lookRotation = Quaternion.LookRotation(direction);
-        Vector3 rotation = Quaternion.Lerp(rotationPoint.rotation, lookRotation, Time.deltaTime * 10f).eulerAngles;
+        Vector3 rotation = Quaternion.Lerp(rotationPoint.rotation, lookRotation, Time.deltaTime * turnSpeed).eulerAngles;
         //rotation.y += 180;
         rotationPoint.rotation = Quaternion.Euler(0f, rotation.y, 0f);
+
+        //Firing
+        if (fireCountdown <= 0f)
+        {
+            Shoot();
+            fireCountdown = 1f / fireRate;
+
+        }
+
+        fireCountdown -= Time.deltaTime;
+    }
+
+    void Shoot()
+    {
+        GameObject bulletToShoot = (GameObject)Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+        Bullet bullet = bulletToShoot.GetComponent<Bullet>();
+        if (bullet != null)
+        {
+            bullet.FindTarget(target);
+        }
     }
 
     void OnDrawGizmosSelected()
