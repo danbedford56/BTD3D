@@ -7,6 +7,7 @@ public class Enemy : MonoBehaviour
     [Header("Enemy Attributes:")]
     public float speed = 10f;
     public float health = 20f;
+    public int moneesOnDeath = 20;
 
     private Transform target;
     private int wayPointIndex = 0;
@@ -44,6 +45,8 @@ public class Enemy : MonoBehaviour
         if (health <= 0)
         {
             Destroy(gameObject);
+            PlayerStatus.monees += moneesOnDeath;
+            Debug.Log(PlayerStatus.monees);
         }
     }
 
