@@ -5341,7 +5341,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66cec38e9e4b046d1be4756c446ea656, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defaultTower: {fileID: 2354344990687595620, guid: 7eaeb69a709b6402097dbcb54d79567c, type: 3}
+  defaultTower: {fileID: 2508148441631401046, guid: 13db209a4a51c4c62b78a4a6b052d7a7, type: 3}
 --- !u!1001 &633899965
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -21,7 +21,7 @@ public class BuildManager : MonoBehaviour
         towerToBuild = defaultTower;
     }
 
-    public GameObject getTowerToBuid()
+    public GameObject GetTowerToBuid()
     {
         return towerToBuild;
     }

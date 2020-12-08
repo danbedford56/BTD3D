@@ -32,7 +32,7 @@ public class Node : MonoBehaviour
             Debug.Log("Cannot place a tower here. TODO: Display on screen");
             return; 
         }
-        GameObject towerToBuild = BuildManager.instance.getTowerToBuid();
+        GameObject towerToBuild = BuildManager.instance.GetTowerToBuid();
         tower = (GameObject)Instantiate(towerToBuild, transform.position + towerOffset, transform.rotation);
 
     }
