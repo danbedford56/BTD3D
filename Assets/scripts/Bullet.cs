@@ -6,6 +6,8 @@ public class Bullet : MonoBehaviour
 {
     private Transform target;
     public float bulletSpeed = 80f;
+    [HideInInspector]
+    public float damage;
 
     public void FindTarget(Transform _target)
     {
@@ -33,7 +35,7 @@ public class Bullet : MonoBehaviour
 
     void HitTarget()
     {
-        Destroy(target.gameObject);
+        target.GetComponent<Enemy>().takeDamage(damage);
         Destroy(gameObject);
     }
 }

@@ -11,12 +11,14 @@ public class tower : MonoBehaviour
     public float fireRate = 1f;
     private float fireCountdown = 0f;
     public float range;
+    public float damage;
     [Header("Setup")]
     public GameObject bulletPrefab;
     public Transform firePoint;
     public string enemyTag = "Enemy";
     public float turnSpeed = 10f;
     public Transform rotationPoint;
+    public AudioClip towerAudio;
 
     private void Start()
     {
@@ -78,6 +80,7 @@ public class tower : MonoBehaviour
         Bullet bullet = bulletToShoot.GetComponent<Bullet>();
         if (bullet != null)
         {
+            bullet.damage = damage;
             bullet.FindTarget(target);
         }
     }
