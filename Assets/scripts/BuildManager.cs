@@ -46,7 +46,8 @@ public class BuildManager : MonoBehaviour
         }
 
         PlayerStatus.monees -= towerToBuild.cost;
-        GameObject tower = (GameObject)Instantiate(towerToBuild.prefab, node.GetBuildPosition(), Quaternion.identity);
+        Vector3 offset = towerToBuild.prefab.GetComponent<tower>().placementOffset;
+        GameObject tower = (GameObject)Instantiate(towerToBuild.prefab, node.GetBuildPosition() + offset, Quaternion.identity);
         node.tower = tower;
         Debug.Log("Tower built! Money left!" + PlayerStatus.monees);
     }

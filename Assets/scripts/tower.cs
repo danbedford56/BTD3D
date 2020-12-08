@@ -12,6 +12,7 @@ public class tower : MonoBehaviour
     private float fireCountdown = 0f;
     public float range;
     public float damage;
+    public Vector3 placementOffset;
     [Header("Setup")]
     public GameObject bulletPrefab;
     public Transform firePoint;

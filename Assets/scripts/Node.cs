@@ -3,7 +3,6 @@
 public class Node : MonoBehaviour
 {
     public Color hoverColor;
-    public Vector3 towerOffset;
 
     [Header("isOptional")]
     public GameObject tower;
@@ -59,7 +58,7 @@ public class Node : MonoBehaviour
     //This sets the build position to the node position plus the tower offset which is the distance above the node. 
     public Vector3 GetBuildPosition()
     {
-        return transform.position + towerOffset;
+        return transform.position;
     }
 
 
