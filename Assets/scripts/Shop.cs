@@ -5,6 +5,7 @@ public class Shop : MonoBehaviour
 {
     BuildManager buildManager;
     public TowerBlueprint turret; //We need to make a new TowerBlueprint variable for each tower. 
+    public TowerBlueprint missileLauncher;
 
     void Start()
     {
@@ -18,6 +19,12 @@ public class Shop : MonoBehaviour
     {
         Debug.Log("Turret selected");
         buildManager.SelectTowerToBuild(turret);
+    }
+
+    public void SelectMissileLauncher()
+    {
+        Debug.Log("Turret selected");
+        buildManager.SelectTowerToBuild(missileLauncher);
     }
 
 }
