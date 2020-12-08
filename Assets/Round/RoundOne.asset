@@ -10,8 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 961c3bdfed7a443c19e804314bac5c34, type: 3}
-  m_Name: RoundOne1
+  m_Name: RoundOne
   m_EditorClassIdentifier: 
-  numOfWaves: 0
-  enemies: []
+  numOfWaves: 5
+  enemies:
+  - {fileID: 2873540182441091852, guid: 6b63e03c73a0e4b9bbd4e9d71f9d43c6, type: 3}
   timeBetweenWaves: 5
