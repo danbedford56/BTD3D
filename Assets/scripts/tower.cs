@@ -13,6 +13,7 @@ public class tower : MonoBehaviour
     public float range;
     public float damage;
     public Vector3 placementOffset;
+
     [Header("Setup")]
     public GameObject bulletPrefab;
     public Transform firePoint;
