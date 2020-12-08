@@ -48,6 +48,7 @@ MonoBehaviour:
   fireRate: 0.25
   range: 20
   damage: 30
+  placementOffset: {x: 0, y: 0.5, z: 0}
   bulletPrefab: {fileID: 3173076072985151086, guid: d10de3162128e43839ceb18b70375c70, type: 3}
   firePoint: {fileID: 4235994375700276790}
   enemyTag: Enemy
