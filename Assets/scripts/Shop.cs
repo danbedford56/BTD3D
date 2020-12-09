@@ -4,8 +4,8 @@ using UnityEngine;
 public class Shop : MonoBehaviour
 {
     BuildManager buildManager;
-    public TowerBlueprint turret; //We need to make a new TowerBlueprint variable for each tower. 
-    public TowerBlueprint missileLauncher;
+    public  TowerBlueprint turret; //We need to make a new TowerBlueprint variable for each tower. 
+    public  TowerBlueprint missileLauncher;
 
     void Start()
     {
