@@ -52,4 +52,11 @@ public class BuildManager : MonoBehaviour
         Debug.Log("Tower built! Money left!" + PlayerStatus.monees);
     }
 
+    public bool HasMonees
+    {
+        get
+        {
+            return PlayerStatus.monees >= towerToBuild.cost;
+        }
+    }
 }
