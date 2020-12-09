@@ -20,7 +20,7 @@ public class tower : MonoBehaviour
     public string enemyTag = "Enemy";
     public float turnSpeed = 10f;
     public Transform rotationPoint;
-    public AudioClip towerAudio;
+    public AudioSource shotSound;
 
     private void Start()
     {
@@ -62,7 +62,6 @@ public class tower : MonoBehaviour
 
         Quaternion lookRotation = Quaternion.LookRotation(direction);
         Vector3 rotation = Quaternion.Lerp(rotationPoint.rotation, lookRotation, Time.deltaTime * turnSpeed).eulerAngles;
-        //rotation.y += 180;
         rotationPoint.rotation = Quaternion.Euler(0f, rotation.y, 0f);
 
         //Firing
@@ -84,6 +83,7 @@ public class tower : MonoBehaviour
         {
             bullet.damage = damage;
             bullet.FindTarget(target);
+            shotSound.Play();
         }
     }
 
