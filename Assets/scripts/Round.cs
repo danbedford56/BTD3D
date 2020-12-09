@@ -4,9 +4,15 @@ using UnityEngine;
 
 [CreateAssetMenu]
 public class Round : ScriptableObject
-{
-    public int numOfWaves;
-    public GameObject[] enemies;
+{ 
+    public Wave[] waves;
     public float timeBetweenWaves = 5f;
 
+}
+
+[System.Serializable]
+public struct Wave
+{
+    public GameObject[] enemies;
+    public int[] numOfEnemies;
 }
