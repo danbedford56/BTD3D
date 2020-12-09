@@ -3,6 +3,7 @@
 public class Node : MonoBehaviour
 {
     public Color hoverColor;
+    public Color notEnoughMoneesColor;
 
     [Header("isOptional")]
     public GameObject tower;
@@ -29,7 +30,7 @@ public class Node : MonoBehaviour
 
         if (!buildManager.HasMonees)
         {
-            rend.material.color = Color.red;
+            rend.material.color = notEnoughMoneesColor;
         }
         else
         {
