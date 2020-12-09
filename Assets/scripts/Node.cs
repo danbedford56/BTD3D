@@ -27,7 +27,15 @@ public class Node : MonoBehaviour
         if (!buildManager.CanBuild)
             return;
 
-        rend.material.color = hoverColor;
+        if (!buildManager.HasMonees)
+        {
+            rend.material.color = Color.red;
+        }
+        else
+        {
+            rend.material.color = hoverColor;
+        }
+
     }
 
 
