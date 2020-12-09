@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using ArrayExtensions;
 
 public class RoundSystem : MonoBehaviour
 {
@@ -48,17 +49,14 @@ public class RoundSystem : MonoBehaviour
         Debug.Log(currentWave);
         if (currentWave < rounds[currentRound].waves.Length)
         {
-            Debug.Log("Here");
-            Wave wave = rounds[currentRound].waves[currentWave];
-            for (int j = 0; j < wave.enemies.Length; j++)
+            List<GameObject> wave = createWaveArray(rounds[currentRound].waves[currentWave]);
+
+            for (int i = 0; i < wave.Count; i++)
             {
-                for (int i = 0; i < wave.numOfEnemies[j]; i++)
-                {
-                    SpawnEnemy(wave.enemies[j]);
-                    enemiesAlive++;
-                    Debug.Log(enemiesAlive + "Enemies alive");
-                    yield return new WaitForSeconds(0.5f);
-                }
+                SpawnEnemy(wave[i]);
+                enemiesAlive++;
+                Debug.Log(enemiesAlive + "Enemies alive");
+                yield return new WaitForSeconds(0.5f);
             }
             currentWave++;
         }
@@ -68,5 +66,23 @@ public class RoundSystem : MonoBehaviour
     {
         Instantiate(enemy, spawnPoint.position, spawnPoint.rotation);
     }
+
+
+    List<GameObject> createWaveArray(Wave wave)
+    {
+        List<GameObject> enemies = new List<GameObject>();
+        for (int j = 0; j < wave.enemies.Length; j++)
+        {
+            for(int i = 0; i < wave.numOfEnemies[j]; i++)
+            {
+                enemies.Add(wave.enemies[j]);
+            }
+        }
+        enemies = enemies.Shuffle();
+        return enemies;
+    }
+
+    
+
 }
 
