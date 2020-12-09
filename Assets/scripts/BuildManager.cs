@@ -4,6 +4,7 @@ public class BuildManager : MonoBehaviour
 {
     public static BuildManager instance;
     private TowerBlueprint towerToBuild;
+    public GameObject buildEffect; 
     
 
     //When the game starts, if there is already a BuildManager instance, there is a message in the console log. 
@@ -49,6 +50,8 @@ public class BuildManager : MonoBehaviour
         Vector3 offset = towerToBuild.prefab.GetComponent<tower>().placementOffset;
         GameObject tower = (GameObject)Instantiate(towerToBuild.prefab, node.GetBuildPosition() + offset, Quaternion.identity);
         node.tower = tower;
+        GameObject effect = (GameObject)Instantiate(buildEffect, node.GetBuildPosition() + offset, Quaternion.identity);
+        Destroy(effect, 5f);
         Debug.Log("Tower built! Money left!" + PlayerStatus.monees);
     }
 

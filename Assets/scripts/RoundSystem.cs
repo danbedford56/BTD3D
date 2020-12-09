@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using ArrayExtensions;
+using UnityEngine.UI; 
 
 public class RoundSystem : MonoBehaviour
 {
@@ -12,11 +13,15 @@ public class RoundSystem : MonoBehaviour
     private static float countdown = 2f;
     private int currentWave = 0;
     public static int enemiesAlive = 0;
+    public Button startRoundButton;
+    public GameObject shopPanel; 
 
     public void startRound()
     {
         Debug.Log("Round " + currentRound + " started");
         roundOngoing = true;
+        startRoundButton.gameObject.SetActive(false);
+        shopPanel.gameObject.SetActive(false);
     }
 
     private void Update()
@@ -41,6 +46,10 @@ public class RoundSystem : MonoBehaviour
                 }
             }
             countdown -= Time.deltaTime;
+        }else
+        {
+            startRoundButton.gameObject.SetActive(true);
+            shopPanel.gameObject.SetActive(true);
         }
     }
 
