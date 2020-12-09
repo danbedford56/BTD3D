@@ -45,6 +45,10 @@ public class Bullet : MonoBehaviour
     void HitTarget()
     {
         GameObject effectInstance = (GameObject)Instantiate(impactEffect, transform.position, transform.rotation);
+        if (effectInstance.GetComponent<AudioSource>())
+        {
+            effectInstance.GetComponent<AudioSource>().Play();
+        }
         Destroy(effectInstance, 1f);
 
         if (explosionRadius > 0f)
