@@ -7,7 +7,7 @@ public class RoundSystem : MonoBehaviour
 {
     public Round[] rounds;
     public Transform spawnPoint;
-    private int currentRound = 0;
+    public static int currentRound = 0;
     public static bool roundOngoing = false;
     private static float countdown = 2f;
     private int currentWave = 0;
