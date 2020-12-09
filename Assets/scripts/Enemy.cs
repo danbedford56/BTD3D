@@ -32,6 +32,12 @@ public class Enemy : MonoBehaviour
         if (wayPointIndex == Waypoints.points.Length - 1)
         {
             RoundSystem.enemiesAlive--;
+            PlayerStatus.lives -= health;
+            if (PlayerStatus.lives <= 0)
+            {
+                PlayerStatus.lives = 0;
+                Die();
+            }
             Destroy(gameObject);
             return;
         }
@@ -51,6 +57,11 @@ public class Enemy : MonoBehaviour
             RoundSystem.enemiesAlive--;
             Debug.Log(PlayerStatus.monees);
         }
+    }
+
+    void Die()
+    {
+        Debug.Log("You lost");
     }
 
 }
