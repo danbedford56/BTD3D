@@ -9,5 +9,8 @@ public class TowerBlueprint
     public int unlockAtLevel; 
 
     //These variables are set in the shop in unity. 
-       
+    public int GetSellAmount()
+    {
+        return cost / 2;
+    }
 }
