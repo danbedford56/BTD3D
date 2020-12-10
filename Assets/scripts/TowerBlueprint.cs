@@ -8,5 +8,8 @@ public class TowerBlueprint
     public int cost;
 
     //These variables are set in the shop in unity. 
-       
+    public int GetSellAmount()
+    {
+        return cost / 2;
+    }
 }

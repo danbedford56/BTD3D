@@ -55,21 +55,10 @@ public class BuildManager : MonoBehaviour
 
     //Sets the tower position as the build position and sets the node tower to the given tower.
     //If the player doesnt have enough money, they wont be able to build the tower. 
-    public void BuildTowerOn(Node node)
-    {
-        if (PlayerStatus.monees < towerToBuild.cost)
-        {
-            Debug.Log("Let player know on UI that they have insufficient monees");
-            return;
-        }
 
-        PlayerStatus.monees -= towerToBuild.cost;
-        Vector3 offset = towerToBuild.prefab.GetComponent<tower>().placementOffset;
-        GameObject tower = (GameObject)Instantiate(towerToBuild.prefab, node.GetBuildPosition() + offset, Quaternion.identity);
-        node.tower = tower;
-        GameObject effect = (GameObject)Instantiate(buildEffect, node.GetBuildPosition() + offset, Quaternion.identity);
-        Destroy(effect, 5f);
-        Debug.Log("Tower built! Money left!" + PlayerStatus.monees);
+    public TowerBlueprint GetTowerToBuild()
+    {
+        return towerToBuild;
     }
 
     public bool HasMonees

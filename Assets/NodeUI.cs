@@ -18,4 +18,10 @@ public class NodeUI : MonoBehaviour
     {
         ui.SetActive(false);
     }
+
+    public void Sell()
+    {
+        target.SellTower();
+        BuildManager.instance.DeselectNode();
+    }
 }
