@@ -51,7 +51,12 @@ public class Node : MonoBehaviour
             }
             else
             {
-                rend.material.color = hoverColor;
+                if (this.tower == null)
+                {
+                    tower towerCom = buildManager.GetTowerToBuild().prefab.GetComponent<tower>();
+                    Draw.DrawCircle(gameObject, towerCom.range);
+                    rend.material.color = hoverColor;
+                }
             }
         }
     }
@@ -59,7 +64,11 @@ public class Node : MonoBehaviour
 
     //When the user stops hovering over a node, the color of the node is set back to the default color. 
     void OnMouseExit()
-    {
+    { 
+        if (buildManager.GetTowerToBuild() != null)
+        {
+            Destroy(this.GetComponent<LineRenderer>());
+        }
         rend.material.color = startColor;
     }
 
@@ -101,7 +110,7 @@ public class Node : MonoBehaviour
         towerBlueprint = blueprint;
         GameObject effect = (GameObject)Instantiate(buildManager.buildEffect,GetBuildPosition() + offset, Quaternion.identity);
         Destroy(effect, 5f);
-
+        Destroy(this.GetComponent<LineRenderer>());
         Debug.Log("Tower built! Money left!" + PlayerStatus.monees);
         
     }
