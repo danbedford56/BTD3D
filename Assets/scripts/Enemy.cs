@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class Enemy : MonoBehaviour
 {
     [Header("Enemy Attributes:")]
     public float speed = 10f;
     public float health = 20f;
     public int moneesOnDeath = 20;
+
 
     private Transform target;
     private int wayPointIndex = 0;
@@ -33,11 +35,7 @@ public class Enemy : MonoBehaviour
         {
             RoundSystem.enemiesAlive--;
             PlayerStatus.lives -= health;
-            if (PlayerStatus.lives <= 0)
-            {
-                PlayerStatus.lives = 0;
-                Die();
-            }
+            
             Destroy(gameObject);
             return;
         }
@@ -59,9 +57,6 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    void Die()
-    {
-        Debug.Log("You lost");
-    }
+    
 
 }
