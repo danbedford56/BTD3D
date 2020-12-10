@@ -4,8 +4,10 @@ public class BuildManager : MonoBehaviour
 {
     public static BuildManager instance;
     private TowerBlueprint towerToBuild;
-    public GameObject buildEffect; 
-    
+    private Node selectedNode;
+    public GameObject buildEffect;
+    public GameObject sellEffect;
+    public NodeUI nodeUI;
 
     //When the game starts, if there is already a BuildManager instance, there is a message in the console log. 
     void Awake()
@@ -18,11 +20,27 @@ public class BuildManager : MonoBehaviour
         instance = this;
     }
 
-
+    public void SelectNode (Node node)
+    {
+        if (selectedNode == node)
+        {
+            DeselectNode();
+            return;
+        }
+        selectedNode = node;
+        towerToBuild = null;
+        nodeUI.SetTarget(node);
+    }
+    public void DeselectNode()
+    {
+        selectedNode = null;
+        nodeUI.Hide();
+    }
     //Set the tower we want to build as the tower we give it. 
     public void SelectTowerToBuild(TowerBlueprint tower)
     {
-        towerToBuild = tower; 
+        towerToBuild = tower;
+        DeselectNode();
     }
 
 
@@ -38,21 +56,10 @@ public class BuildManager : MonoBehaviour
 
     //Sets the tower position as the build position and sets the node tower to the given tower.
     //If the player doesnt have enough money, they wont be able to build the tower. 
-    public void BuildTowerOn(Node node)
-    {
-        if (PlayerStatus.monees < towerToBuild.cost)
-        {
-            Debug.Log("Let player know on UI that they have insufficient monees");
-            return;
-        }
 
-        PlayerStatus.monees -= towerToBuild.cost;
-        Vector3 offset = towerToBuild.prefab.GetComponent<tower>().placementOffset;
-        GameObject tower = (GameObject)Instantiate(towerToBuild.prefab, node.GetBuildPosition() + offset, Quaternion.identity);
-        node.tower = tower;
-        GameObject effect = (GameObject)Instantiate(buildEffect, node.GetBuildPosition() + offset, Quaternion.identity);
-        Destroy(effect, 5f);
-        Debug.Log("Tower built! Money left!" + PlayerStatus.monees);
+    public TowerBlueprint GetTowerToBuild()
+    {
+        return towerToBuild;
     }
 
     public bool HasMonees
