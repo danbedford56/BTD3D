@@ -28,6 +28,10 @@ public class Node : MonoBehaviour
     {
         PlayerStatus.monees += towerBlueprint.GetSellAmount();
         Debug.Log("sold for " + towerBlueprint.GetSellAmount());
+        Vector3 offset = towerBlueprint.prefab.GetComponent<tower>().placementOffset;
+        GameObject effect = (GameObject)Instantiate(buildManager.sellEffect, GetBuildPosition() + offset, Quaternion.identity);
+        Destroy(effect, 5f);
+
         Destroy(tower);
         towerBlueprint = null;
     }

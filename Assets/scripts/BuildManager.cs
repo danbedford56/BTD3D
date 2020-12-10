@@ -6,6 +6,7 @@ public class BuildManager : MonoBehaviour
     private TowerBlueprint towerToBuild;
     private Node selectedNode;
     public GameObject buildEffect;
+    public GameObject sellEffect;
     public NodeUI nodeUI;
 
     //When the game starts, if there is already a BuildManager instance, there is a message in the console log. 
