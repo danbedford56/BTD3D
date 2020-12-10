@@ -6815,7 +6815,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startingMonees: 400
   startingLives: 200
-  GameOverUI: {fileID: 506210864}
+  GameOverUI: {fileID: 0}
 --- !u!1001 &633899965
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16705,7 +16705,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1790777352}
   m_LocalRotation: {x: 0.66081196, y: -0.3889888, z: 0.5726389, w: 0.29000002}
-  m_LocalPosition: {x: -45.1, y: 79.6, z: -60.5}
+  m_LocalPosition: {x: -45.1, y: 79.6, z: -52.9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
