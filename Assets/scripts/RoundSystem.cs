@@ -22,6 +22,7 @@ public class RoundSystem : MonoBehaviour
         roundOngoing = true;
         startRoundButton.gameObject.SetActive(false);
         shopPanel.gameObject.SetActive(false);
+        BuildManager.instance.SelectTowerToBuild(null);
     }
 
     private void Update()

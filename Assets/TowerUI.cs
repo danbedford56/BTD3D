@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI; 
 
 
 public class TowerUI : MonoBehaviour
@@ -9,10 +10,27 @@ public class TowerUI : MonoBehaviour
     [Header("isOptional")]
     public TextMeshProUGUI towerCostText;
     public TowerBlueprint tower;
+    public TextMeshProUGUI towerUnlockText;
+    public GameObject towerUnlockPanel;
+    public Button placeTowerButton; 
 
     void Awake()
     {
         towerCostText = GetComponent<TextMeshProUGUI>();
         towerCostText.text = "£" + tower.cost.ToString();
+
+        //towerUnlockText = GetComponent<TextMeshProUGUI>();
+        //towerUnlockText.text = "Unlock Tower at Level " + tower.unlockAtLevel;
+        towerUnlockPanel.gameObject.SetActive(true);
+        placeTowerButton.interactable = false;
+    }
+
+    void Update()
+    {
+        if ((RoundSystem.currentRound + 1) >= tower.unlockAtLevel)
+        {
+            towerUnlockPanel.gameObject.SetActive(false);
+            placeTowerButton.interactable = true;
+        }
     }
 }

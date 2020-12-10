@@ -25,18 +25,20 @@ public class Node : MonoBehaviour
     //When the user hovers over a node, it there isnt a tower there, it will display a hover color. 
     void OnMouseEnter()
     {
-        if (!buildManager.CanBuild)
-            return;
-
-        if (!buildManager.HasMonees)
+        if (!RoundSystem.roundOngoing)
         {
-            rend.material.color = notEnoughMoneesColor;
-        }
-        else
-        {
-            rend.material.color = hoverColor;
-        }
+            if (!buildManager.CanBuild)
+                return;
 
+            if (!buildManager.HasMonees)
+            {
+                rend.material.color = notEnoughMoneesColor;
+            }
+            else
+            {
+                rend.material.color = hoverColor;
+            }
+        }
     }
 
 
@@ -50,17 +52,20 @@ public class Node : MonoBehaviour
     //When the user clicks on a node, if there is not a tower there already, and there is a tower selected to place, it places a tower on the node. 
     void OnMouseDown()
     {
-        if (!buildManager.CanBuild)
-            return;
-
-        if (tower != null)
+        if (!RoundSystem.roundOngoing)
         {
-            Debug.Log("Cannot place a tower here. TODO: Display on screen");
-            return; 
+            if (!buildManager.CanBuild)
+                return;
+
+            if (tower != null)
+            {
+                Debug.Log("Cannot place a tower here. TODO: Display on screen");
+                return;
+            }
+
+            buildManager.BuildTowerOn(this);
+            buildManager.SelectTowerToBuild(null);
         }
-
-        buildManager.BuildTowerOn(this);
-
     }
 
 
