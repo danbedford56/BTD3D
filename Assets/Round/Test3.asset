@@ -22,5 +22,6 @@ MonoBehaviour:
   - enemies:
     - {fileID: 2573174211152477566, guid: 4cd03e2bd3fe1455dbab3e321e497a3a, type: 3}
     - {fileID: 3051445590783190525, guid: 29845766849d24942bd24dd977547d64, type: 3}
-    numOfEnemies: 0700000005000000
+    - {fileID: 3051445590783190525, guid: cd107feca385044968fb062349cce613, type: 3}
+    numOfEnemies: 070000000500000001000000
   timeBetweenWaves: 5
