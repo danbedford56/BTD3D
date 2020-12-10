@@ -132,7 +132,7 @@ MonoBehaviour:
   range: 15
   damage: 10
   placementOffset: {x: -1, y: 2.5, z: 0}
-  bulletPrefab: {fileID: 7900197670602166480, guid: 9da213dd8a0ec4be99f7bec2eb3a7711, type: 3}
+  bulletPrefab: {fileID: 5489050379409287731, guid: 99427cdeecca14f3f8c4195510f60daa, type: 3}
   firePoint: {fileID: 6469646295213355127}
   enemyTag: Enemy
   turnSpeed: 10
