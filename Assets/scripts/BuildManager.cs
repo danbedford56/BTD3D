@@ -4,8 +4,9 @@ public class BuildManager : MonoBehaviour
 {
     public static BuildManager instance;
     private TowerBlueprint towerToBuild;
-    public GameObject buildEffect; 
-    
+    private Node selectedNode;
+    public GameObject buildEffect;
+    public NodeUI nodeUI;
 
     //When the game starts, if there is already a BuildManager instance, there is a message in the console log. 
     void Awake()
@@ -18,11 +19,27 @@ public class BuildManager : MonoBehaviour
         instance = this;
     }
 
-
+    public void SelectNode (Node node)
+    {
+        if (selectedNode == node)
+        {
+            DeselectNode();
+            return;
+        }
+        selectedNode = node;
+        towerToBuild = null;
+        nodeUI.SetTarget(node);
+    }
+    public void DeselectNode()
+    {
+        selectedNode = null;
+        nodeUI.Hide();
+    }
     //Set the tower we want to build as the tower we give it. 
     public void SelectTowerToBuild(TowerBlueprint tower)
     {
-        towerToBuild = tower; 
+        towerToBuild = tower;
+        DeselectNode();
     }
 
 

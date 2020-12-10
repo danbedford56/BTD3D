@@ -50,14 +50,16 @@ public class Node : MonoBehaviour
     //When the user clicks on a node, if there is not a tower there already, and there is a tower selected to place, it places a tower on the node. 
     void OnMouseDown()
     {
-        if (!buildManager.CanBuild)
-            return;
+        
 
         if (tower != null)
         {
-            Debug.Log("Cannot place a tower here. TODO: Display on screen");
+            buildManager.SelectNode(this);
             return; 
         }
+
+        if (!buildManager.CanBuild)
+            return;
 
         buildManager.BuildTowerOn(this);
 
