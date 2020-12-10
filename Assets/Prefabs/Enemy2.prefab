@@ -3127,7 +3127,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   health: 50
-  moneesOnDeath: 5
+  moneesOnDeath: 15
 --- !u!135 &194138166976993405
 SphereCollider:
   m_ObjectHideFlags: 0

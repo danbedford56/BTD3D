@@ -18,10 +18,13 @@ public class RoundSystem : MonoBehaviour
 
     public void startRound()
     {
-        Debug.Log("Round " + currentRound + " started");
-        roundOngoing = true;
-        startRoundButton.gameObject.SetActive(false);
-        shopPanel.gameObject.SetActive(false);
+        if (currentRound < rounds.Length)
+        {
+            Debug.Log("Round " + currentRound + " started");
+            roundOngoing = true;
+            startRoundButton.gameObject.SetActive(false);
+            shopPanel.gameObject.SetActive(false);
+        }
     }
 
     private void Update()
