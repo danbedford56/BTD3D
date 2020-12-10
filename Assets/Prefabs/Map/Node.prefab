@@ -115,3 +115,4 @@ MonoBehaviour:
     prefab: {fileID: 0}
     cost: 0
     unlockAtLevel: 0
+  rangeCircleMaterial: {fileID: 2100000, guid: 428d78039cd1548648637a07e7892ec0, type: 2}

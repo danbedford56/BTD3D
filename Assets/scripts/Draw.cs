@@ -4,7 +4,9 @@ using UnityEngine;
 
 public static class Draw
 {
-    public static void DrawCircle(GameObject node, float radius, float lineWidth)
+    private static float lineWidth = 0.5f;
+
+    public static void DrawCircle(GameObject node, float radius)
     {
         var segments = 360;
         var line = node.AddComponent<LineRenderer>();
@@ -12,6 +14,10 @@ public static class Draw
         line.startWidth = lineWidth;
         line.endWidth = lineWidth;
         line.positionCount = segments + 1;
+        line.startColor = Color.green;
+        line.endColor = Color.green;
+        line.material = node.GetComponent<Node>().rangeCircleMaterial;
+
 
         var pointCount = segments + 1; // add extra point to make startpoint and endpoint the same to close the circle
         var points = new Vector3[pointCount];

@@ -9,6 +9,7 @@ public class Node : MonoBehaviour
     public GameObject tower;
     [HideInInspector]
     public TowerBlueprint towerBlueprint;
+    public Material rangeCircleMaterial;
 
     BuildManager buildManager;
     

@@ -30,7 +30,7 @@ public class BuildManager : MonoBehaviour
         selectedNode = node;
         if (node.tower != null) {
             tower towerCom = node.tower.GetComponent<tower>();
-            Draw.DrawCircle(node.gameObject, towerCom.range, 2f);
+            Draw.DrawCircle(node.gameObject, towerCom.range);
         }
         towerToBuild = null;
         nodeUI.SetTarget(node);

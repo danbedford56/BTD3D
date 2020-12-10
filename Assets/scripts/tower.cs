@@ -22,6 +22,7 @@ public class tower : MonoBehaviour
     public Transform rotationPoint;
     public AudioSource shotSound;
 
+
     private void Start()
     {
         InvokeRepeating("UpdateTarget", 0f, 0.5f);
