@@ -111,3 +111,7 @@ MonoBehaviour:
   hoverColor: {r: 0.5377358, g: 0.5098344, b: 0.5098344, a: 1}
   notEnoughMoneesColor: {r: 1, g: 0, b: 0, a: 0}
   tower: {fileID: 0}
+  towerBlueprint:
+    prefab: {fileID: 0}
+    cost: 0
+    unlockAtLevel: 0

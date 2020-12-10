@@ -1,49 +1,11 @@
 fileFormatVersion: 2
-guid: aaf5916330b2de34693e9ff9541dc5a1
+guid: be391460088b84460abd0386fdbb6471
 ModelImporter:
-  serializedVersion: 23
-  fileIDToRecycleName:
-    100000: Female Hair 1
-    100002: Female Hair 2
-    100004: Female Hair 3
-    100006: Female Hair 4
-    100008: Female Hair 5
-    100010: Female Hair 6
-    100012: Female Hair 7
-    100014: //RootNode
-    400000: Female Hair 1
-    400002: Female Hair 2
-    400004: Female Hair 3
-    400006: Female Hair 4
-    400008: Female Hair 5
-    400010: Female Hair 6
-    400012: Female Hair 7
-    400014: //RootNode
-    2100000: Female Hair Color
-    2300000: Female Hair 1
-    3300000: Female Hair 1
-    4300000: Female Hair 1
-    4300002: Female Hair 2
-    4300004: Female Hair 3
-    4300006: Female Hair 4
-    4300008: Female Hair 5
-    4300010: Female Hair 6
-    4300012: Female Hair 7
-    9500000: //RootNode
-    13700000: Female Hair 2
-    13700002: Female Hair 3
-    13700004: Female Hair 4
-    13700006: Female Hair 5
-    13700008: Female Hair 6
-    13700010: Female Hair 7
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Female Hair Color
-    second: {fileID: 2100000, guid: 410490203398d924dbaff47c9221b21c, type: 2}
+  serializedVersion: 20101
+  internalIDToNameTable: []
+  externalObjects: {}
   materials:
-    importMaterials: 1
+    materialImportMode: 1
     materialName: 0
     materialSearch: 1
     materialLocation: 1
@@ -69,40 +31,51 @@ ModelImporter:
     extraExposedTransformPaths: []
     extraUserProperties: []
     clipAnimations: []
-    isReadable: 1
+    isReadable: 0
   meshes:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
     addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
     importVisibility: 1
     importBlendShapes: 1
     importCameras: 1
     importLights: 1
+    fileIdsGeneration: 2
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
-    optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
+    bakeAxisConversion: 0
     preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
     indexFormat: 0
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
     secondaryUVPackMargin: 4
     useFileScale: 1
-    previousCalculatedGlobalScale: 0.01
-    hasPreviousCalculatedGlobalScale: 1
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
     tangentImportMode: 3
     normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
   importAnimation: 1
-  copyAvatar: 0
   humanDescription:
-    serializedVersion: 2
+    serializedVersion: 3
     human: []
     skeleton: []
     armTwist: 0.5
@@ -112,13 +85,16 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
+    globalScale: 1
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 2
   humanoidOversampling: 1
+  avatarSetup: 0
   additionalBone: 0
   userData: 
   assetBundleName: 

@@ -20,7 +20,7 @@ public class BuildManager : MonoBehaviour
         instance = this;
     }
 
-    public void SelectNode (Node node)
+    public void SelectNode(Node node)
     {
         if (selectedNode == node)
         {
@@ -28,13 +28,25 @@ public class BuildManager : MonoBehaviour
             return;
         }
         selectedNode = node;
+        if (node.tower != null) {
+            tower towerCom = node.tower.GetComponent<tower>();
+            Draw.DrawCircle(node.gameObject, towerCom.range, 2f);
+        }
         towerToBuild = null;
         nodeUI.SetTarget(node);
     }
+
     public void DeselectNode()
     {
-        selectedNode = null;
-        nodeUI.Hide();
+        if (selectedNode)
+        {
+            if (selectedNode.GetComponent<LineRenderer>())
+            {
+                Destroy(selectedNode.GetComponent<LineRenderer>());
+            }
+            selectedNode = null;
+            nodeUI.Hide();
+        }
     }
     //Set the tower we want to build as the tower we give it. 
     public void SelectTowerToBuild(TowerBlueprint tower)
