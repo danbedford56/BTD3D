@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waves:
   - enemies:
-    - {fileID: 5112114839146569913, guid: 29845766849d24942bd24dd977547d64, type: 3}
+    - {fileID: 3051445590783190525, guid: 29845766849d24942bd24dd977547d64, type: 3}
     numOfEnemies: 05000000
   timeBetweenWaves: 5
