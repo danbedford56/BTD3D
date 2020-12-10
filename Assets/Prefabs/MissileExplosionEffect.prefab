@@ -9810,7 +9810,7 @@ Light:
   serializedVersion: 10
   m_Type: 2
   m_Shape: 0
-  m_Color: {r: 1, g: 0.46937117, b: 0.29411763, a: 1}
+  m_Color: {r: 0, g: 1, b: 0.6423671, a: 1}
   m_Intensity: 4
   m_Range: 25
   m_SpotAngle: 30
