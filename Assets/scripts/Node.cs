@@ -7,6 +7,7 @@ public class Node : MonoBehaviour
 
     [Header("isOptional")]
     public GameObject tower;
+    public GameObject nature;
     [HideInInspector]
     public TowerBlueprint towerBlueprint;
     public Material rangeCircleMaterial;
@@ -35,6 +36,13 @@ public class Node : MonoBehaviour
 
         Destroy(tower);
         towerBlueprint = null;
+    }
+
+    public void DestroyNature()
+    {
+        nature.GetComponent<Nature>().DestroyNature();
+        Destroy(nature);
+        nature = null;
     }
 
     //When the user hovers over a node, it there isnt a tower there, it will display a hover color. 
@@ -79,10 +87,10 @@ public class Node : MonoBehaviour
 
         if (!RoundSystem.roundOngoing)
         {
-            if (tower != null)
+            if (tower != null || nature != null)
             {
-            buildManager.SelectNode(this);
-            return; 
+                buildManager.SelectNode(this);
+                return; 
             }
             if (!buildManager.CanBuild)
                 return;

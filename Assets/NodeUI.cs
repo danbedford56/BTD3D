@@ -13,8 +13,16 @@ public class NodeUI : MonoBehaviour
     {
         target = _target;
         transform.position = target.GetBuildPosition();
-        sellAmount.text = "SELL £" + target.towerBlueprint.GetSellAmount();
+        if (target.nature)
+        {
+            sellAmount.text = "Destroy £" + target.nature.GetComponent<Nature>().costToDestroy;
+        }
+        else if (target.tower)
+        {
+            sellAmount.text = "SELL £" + target.towerBlueprint.GetSellAmount();
+        }
         ui.SetActive(true);
+
     }
 
     public void Hide ()
@@ -24,7 +32,18 @@ public class NodeUI : MonoBehaviour
 
     public void Sell()
     {
-        target.SellTower();
+        if (target.nature)
+        {
+            int natureCost = target.nature.GetComponent<Nature>().costToDestroy;
+            if (PlayerStatus.monees >= natureCost)
+            {
+                target.DestroyNature();
+            }
+        }
+        else if (target.tower)
+        {
+            target.SellTower();
+        }
         BuildManager.instance.DeselectNode();
     }
 }
