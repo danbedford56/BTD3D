@@ -74,6 +74,7 @@ public class RoundSystem : MonoBehaviour
                 yield return new WaitForSeconds(0.5f);
             }
             currentWave++;
+            PlayerStatus.Rounds++;
         }
     }
 
