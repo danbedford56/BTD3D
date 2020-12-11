@@ -6,6 +6,7 @@ public class Shop : MonoBehaviour
     BuildManager buildManager;
     public  TowerBlueprint turret; //We need to make a new TowerBlueprint variable for each tower. 
     public  TowerBlueprint missileLauncher;
+    public  TowerBlueprint plagueDoctor;
 
     void Start()
     {
@@ -27,4 +28,9 @@ public class Shop : MonoBehaviour
         buildManager.SelectTowerToBuild(missileLauncher);
     }
 
+    public void SelectPlagueDoctor()
+    { 
+        Debug.Log("Turret selected");
+        buildManager.SelectTowerToBuild(plagueDoctor);
+    }
 }
