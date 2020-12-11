@@ -6388,7 +6388,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7548799088175269955, guid: 2aeed3437634f4992a5f87cf23e01a00, type: 3}
       propertyPath: m_text
-      value: 'Unlock Tower at Round 2
+      value: 'Unlock Tower at Round 3
 
 '
       objectReference: {fileID: 0}
