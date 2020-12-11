@@ -84,7 +84,10 @@ public class tower : MonoBehaviour
         {
             bullet.damage = damage;
             bullet.FindTarget(target);
-            shotSound.Play();
+            if (shotSound)
+            {
+                shotSound.Play();
+            }
         }
     }
 
