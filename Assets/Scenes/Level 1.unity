@@ -5332,7 +5332,7 @@ GameObject:
   - component: {fileID: 497496351}
   - component: {fileID: 497496350}
   m_Layer: 0
-  m_Name: RoundSurvived Text
+  m_Name: Rounds
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5576,6 +5576,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 506210865}
+  - component: {fileID: 506210866}
   m_Layer: 0
   m_Name: GameOveUI
   m_TagString: Untagged
@@ -5603,6 +5604,19 @@ Transform:
   m_Father: {fileID: 1952675416}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &506210866
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 506210864}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a46c541c520d4e9098bc1cbe8da4f8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  roundsText: {fileID: 497496351}
 --- !u!1001 &506475744
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6816,7 +6830,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startingMonees: 400
   startingLives: 200
-  GameOverUI: {fileID: 0}
+  GameOverUI: {fileID: 506210864}
 --- !u!1001 &633899965
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12848,7 +12862,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 0}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -16938,7 +16952,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 0}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
