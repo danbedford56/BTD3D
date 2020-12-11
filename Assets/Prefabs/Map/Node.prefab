@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 4057345573915583179}
   m_Layer: 0
   m_Name: Node
-  m_TagString: Untagged
+  m_TagString: Node
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -111,8 +111,12 @@ MonoBehaviour:
   hoverColor: {r: 0.5377358, g: 0.5098344, b: 0.5098344, a: 1}
   notEnoughMoneesColor: {r: 1, g: 0, b: 0, a: 0}
   tower: {fileID: 0}
+  nature: {fileID: 0}
   towerBlueprint:
     prefab: {fileID: 0}
+    upgradedPrefab: {fileID: 0}
     cost: 0
     unlockAtLevel: 0
+    upgradeCost: 0
   rangeCircleMaterial: {fileID: 2100000, guid: 428d78039cd1548648637a07e7892ec0, type: 2}
+  isUpgraded: 0
