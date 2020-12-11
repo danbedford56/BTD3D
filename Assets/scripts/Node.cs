@@ -7,6 +7,7 @@ public class Node : MonoBehaviour
 
     [HideInInspector]
     public GameObject tower;
+    public GameObject nature;
     [HideInInspector]
     public TowerBlueprint towerBlueprint;
     [HideInInspector]
@@ -40,7 +41,8 @@ public class Node : MonoBehaviour
         towerBlueprint = null;
     }
 
-    public void UpgradeTower ()
+
+    public void UpgradeTower()
     {
         if (PlayerStatus.monees < towerBlueprint.upgradeCost)
         {
@@ -65,6 +67,14 @@ public class Node : MonoBehaviour
 
         Destroy(this.GetComponent<LineRenderer>());
         Debug.Log("Tower upgraded! Money left!" + PlayerStatus.monees);
+    }
+
+    public void DestroyNature()
+    {
+        nature.GetComponent<Nature>().DestroyNature();
+        Destroy(nature);
+        nature = null;
+
     }
 
     //When the user hovers over a node, it there isnt a tower there, it will display a hover color. 
@@ -109,10 +119,10 @@ public class Node : MonoBehaviour
 
         if (!RoundSystem.roundOngoing)
         {
-            if (tower != null)
+            if (tower != null || nature != null)
             {
-            buildManager.SelectNode(this);
-            return; 
+                buildManager.SelectNode(this);
+                return; 
             }
             if (!buildManager.CanBuild)
                 return;
