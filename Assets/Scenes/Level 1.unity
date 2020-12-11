@@ -2589,9 +2589,9 @@ RectTransform:
   m_Father: {fileID: 20836918}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 55.59081, y: -28.536797}
   m_SizeDelta: {x: 85.93195, y: 56.30655}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &229262991
@@ -5998,10 +5998,10 @@ MonoBehaviour:
     upgradeCost: 80
   missileLauncher:
     prefab: {fileID: 1886937652998191807, guid: 3248c6540a1cc4407aba1ec7e4d09db3, type: 3}
-    upgradedPrefab: {fileID: 0}
+    upgradedPrefab: {fileID: 6255610199449597349, guid: 6cb38ffd6681d44a9a2cb021037c908f, type: 3}
     cost: 200
     unlockAtLevel: 0
-    upgradeCost: 0
+    upgradeCost: 160
 --- !u!1001 &518863103
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8566,7 +8566,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &822337007
 RectTransform:
   m_ObjectHideFlags: 0
@@ -19801,9 +19801,9 @@ RectTransform:
   m_Father: {fileID: 20836918}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 141.52277, y: -28.536797}
   m_SizeDelta: {x: 85.93195, y: 56.30655}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2096537681
