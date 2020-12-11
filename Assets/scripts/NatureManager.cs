@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class NatureManager : MonoBehaviour
 {
-    public GameObject tree;
+    public GameObject[] natureObjects;
     public Vector3 treeOffset;
     public int numOfTrees;
 
@@ -22,7 +22,7 @@ public class NatureManager : MonoBehaviour
                 int newSample = Random.Range(0, nodes.Length);
                 foreach (int sample in samples)
                 {
-                    taken = sample == newSample;
+                    if (sample == newSample) { taken = true; }
                 }
                 if (!taken)
                 {
@@ -38,7 +38,8 @@ public class NatureManager : MonoBehaviour
             {
                 if (sample == i)
                 {
-                    GameObject newTree = Instantiate(tree, nodes[i].transform.position + treeOffset, nodes[i].transform.rotation);
+                    int natureObject = Random.Range(0, natureObjects.Length);
+                    GameObject newTree = Instantiate(natureObjects[natureObject], nodes[i].transform.position + treeOffset, nodes[i].transform.rotation);
                     nodes[i].GetComponent<Node>().nature = newTree;
                 }
             }
