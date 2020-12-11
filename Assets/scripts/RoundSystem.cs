@@ -12,7 +12,7 @@ public class RoundSystem : MonoBehaviour
     public static bool roundOngoing = false;
     private static float countdown = 2f;
     private int currentWave = 0;
-    private static int enemiesAlive = 0;
+    public static int enemiesAlive = 0;
     public Button startRoundButton;
     public GameObject shopPanel; 
 
@@ -34,8 +34,6 @@ public class RoundSystem : MonoBehaviour
     {
         if (roundOngoing)
         {
-            GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
-            enemiesAlive = enemies.Length;
             if (countdown <= 0f)
             {
                 if (currentWave == rounds[currentRound].waves.Length)
