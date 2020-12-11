@@ -13,6 +13,7 @@ public class Enemy : MonoBehaviour
 
     private Transform target;
     private int wayPointIndex = 0;
+    private bool isDead = false;
 
     void Start()
     {
@@ -47,14 +48,20 @@ public class Enemy : MonoBehaviour
     public void takeDamage(float damage)
     {
         health -= damage;
-        if (health <= 0)
+        if (health <= 0 && !isDead)
         {
-            Debug.Log(RoundSystem.enemiesAlive + " and one just died");
-            Destroy(gameObject);
-            PlayerStatus.monees += moneesOnDeath;
-            RoundSystem.enemiesAlive--;
-            Debug.Log(PlayerStatus.monees);
+            Die();
         }
+    }
+
+    private void Die()
+    {
+        isDead = true;
+        //Debug.Log(RoundSystem.enemiesAlive + " and one just died");
+        Destroy(gameObject);
+        PlayerStatus.monees += moneesOnDeath;
+        RoundSystem.enemiesAlive--;
+        Debug.Log(PlayerStatus.monees);
     }
 
     
