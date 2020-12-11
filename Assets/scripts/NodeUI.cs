@@ -6,21 +6,28 @@ using UnityEngine.UI;
 public class NodeUI : MonoBehaviour
 {
     public GameObject ui;
+    public GameObject upgradeButton;
     private Node target;
     public Text sellAmount;
+    public Text upgradeAmount;
 
     public void SetTarget(Node _target)
     {
         target = _target;
         transform.position = target.GetBuildPosition();
+
         if (target.nature)
         {
             sellAmount.text = "Destroy £" + target.nature.GetComponent<Nature>().costToDestroy;
+            upgradeButton.SetActive(false);
         }
         else if (target.tower)
         {
             sellAmount.text = "SELL £" + target.towerBlueprint.GetSellAmount();
+            upgradeAmount.text = "UPGRADE £" + target.towerBlueprint.upgradeCost;
+            upgradeButton.SetActive(true);
         }
+
         ui.SetActive(true);
 
     }
@@ -45,5 +52,12 @@ public class NodeUI : MonoBehaviour
             target.SellTower();
         }
         BuildManager.instance.DeselectNode();
+    }
+
+    public void Upgrade()
+    {
+        target.UpgradeTower();
+        BuildManager.instance.DeselectNode();
+
     }
 }
