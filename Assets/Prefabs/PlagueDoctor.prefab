@@ -667,7 +667,7 @@ GameObject:
   - component: {fileID: 811215798295470601}
   - component: {fileID: 2173161701049355716}
   m_Layer: 0
-  m_Name: PT_Medieval_Plague_Doctor
+  m_Name: PlagueDoctor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -723,7 +723,7 @@ MonoBehaviour:
   range: 8
   damage: 50
   placementOffset: {x: 0, y: 1.5, z: -10}
-  bulletPrefab: {fileID: 0}
+  bulletPrefab: {fileID: 2255458814051169468, guid: 34a652340186a41debef138e9837c4d9, type: 3}
   firePoint: {fileID: 8705872909254160187}
   enemyTag: Enemy
   turnSpeed: 10
