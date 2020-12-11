@@ -3104,6 +3104,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ui: {fileID: 822337006}
+  upgradeButton: {fileID: 2096537679}
   sellAmount: {fileID: 161151371}
   upgradeAmount: {fileID: 1548296135}
 --- !u!1001 &258682163

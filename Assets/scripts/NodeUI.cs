@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class NodeUI : MonoBehaviour
 {
     public GameObject ui;
+    public GameObject upgradeButton;
     private Node target;
     public Text sellAmount;
     public Text upgradeAmount;
@@ -15,16 +16,16 @@ public class NodeUI : MonoBehaviour
         target = _target;
         transform.position = target.GetBuildPosition();
 
-        sellAmount.text = "SELL £" + target.towerBlueprint.GetSellAmount();
-        upgradeAmount.text = "UPGRADE £" + target.towerBlueprint.upgradeCost;
-
         if (target.nature)
         {
             sellAmount.text = "Destroy £" + target.nature.GetComponent<Nature>().costToDestroy;
+            upgradeButton.SetActive(false);
         }
         else if (target.tower)
         {
             sellAmount.text = "SELL £" + target.towerBlueprint.GetSellAmount();
+            upgradeAmount.text = "UPGRADE £" + target.towerBlueprint.upgradeCost;
+            upgradeButton.SetActive(true);
         }
 
         ui.SetActive(true);
