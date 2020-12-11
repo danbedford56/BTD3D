@@ -5,11 +5,14 @@ public class Node : MonoBehaviour
     public Color hoverColor;
     public Color notEnoughMoneesColor;
 
-    [Header("isOptional")]
+    [HideInInspector]
     public GameObject tower;
     [HideInInspector]
     public TowerBlueprint towerBlueprint;
+    [HideInInspector]
     public Material rangeCircleMaterial;
+    [HideInInspector]
+    public bool isUpgraded;
 
     BuildManager buildManager;
     
@@ -35,6 +38,33 @@ public class Node : MonoBehaviour
 
         Destroy(tower);
         towerBlueprint = null;
+    }
+
+    public void UpgradeTower ()
+    {
+        if (PlayerStatus.monees < towerBlueprint.upgradeCost)
+        {
+            Debug.Log("Let player know on UI that they have insufficient monees to upgrade");
+            return;
+        }
+
+        PlayerStatus.monees -= towerBlueprint.upgradeCost;
+        Vector3 offset = towerBlueprint.prefab.GetComponent<tower>().placementOffset;
+
+        //remove old one
+        Destroy(tower);
+
+        GameObject _tower = (GameObject)Instantiate(towerBlueprint.upgradedPrefab, GetBuildPosition() + offset, Quaternion.identity);
+        tower = _tower;
+
+        //build new one
+        GameObject effect = (GameObject)Instantiate(buildManager.buildEffect, GetBuildPosition() + offset, Quaternion.identity);
+        Destroy(effect, 5f);
+
+        isUpgraded = true;
+
+        Destroy(this.GetComponent<LineRenderer>());
+        Debug.Log("Tower upgraded! Money left!" + PlayerStatus.monees);
     }
 
     //When the user hovers over a node, it there isnt a tower there, it will display a hover color. 
