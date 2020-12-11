@@ -24,8 +24,16 @@ public class NodeUI : MonoBehaviour
         else if (target.tower)
         {
             sellAmount.text = "SELL £" + target.towerBlueprint.GetSellAmount();
-            upgradeAmount.text = "UPGRADE £" + target.towerBlueprint.upgradeCost;
-            upgradeButton.SetActive(true);
+
+            if (!target.isUpgraded)
+            {
+                upgradeAmount.text = "UPGRADE £" + target.towerBlueprint.upgradeCost;
+                upgradeButton.SetActive(true);
+            }
+            else
+            {
+                upgradeButton.SetActive(false);
+            }
         }
 
         ui.SetActive(true);
