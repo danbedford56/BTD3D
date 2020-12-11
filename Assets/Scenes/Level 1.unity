@@ -7106,8 +7106,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58f0a8997317b413ba95a63d42d6994f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tree: {fileID: 7434180952872567296, guid: 118baf447176b49d2acfa7a3cf6973aa, type: 3}
-  treeOffset: {x: 0, y: 1.7, z: 0}
+  natureObjects:
+  - {fileID: 7434180952872567296, guid: 118baf447176b49d2acfa7a3cf6973aa, type: 3}
+  - {fileID: 5787092920837260200, guid: 98a67b003885e4ea6bca97d1460d6f12, type: 3}
+  treeOffset: {x: 0, y: 0.7, z: 0}
   numOfTrees: 20
 --- !u!1001 &633899965
 PrefabInstance:
