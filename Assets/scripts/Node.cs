@@ -53,13 +53,13 @@ public class Node : MonoBehaviour
             if (!buildManager.CanBuild)
                 return;
 
-            if (!buildManager.HasMonees)
+            if (!buildManager.HasMonees || nature)
             {
                 rend.material.color = notEnoughMoneesColor;
             }
             else
             {
-                if (this.tower == null)
+                if (tower == null && nature == null)
                 {
                     tower towerCom = buildManager.GetTowerToBuild().prefab.GetComponent<tower>();
                     Draw.DrawCircle(gameObject, towerCom.range);
