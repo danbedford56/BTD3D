@@ -20,6 +20,18 @@ public class Node : MonoBehaviour
     private Color startColor;
     private Renderer rend;
 
+    public int sellAmount {
+        get {
+            if (isUpgraded)
+            {
+                return towerBlueprint.GetSellAmount() + (towerBlueprint.upgradeCost / 2);
+            }
+            else
+            {
+                return towerBlueprint.GetSellAmount();
+            }
+        }
+    }
     //On start, make a new instance of build manager.
     //Sets the starting node color to the color set in Unity. 
     void Start()  
@@ -31,8 +43,10 @@ public class Node : MonoBehaviour
 
     public void SellTower()
     {
-        PlayerStatus.monees += towerBlueprint.GetSellAmount();
-        Debug.Log("sold for " + towerBlueprint.GetSellAmount());
+       
+
+        PlayerStatus.monees += sellAmount;
+        Debug.Log("sold for " + sellAmount);
         Vector3 offset = towerBlueprint.prefab.GetComponent<tower>().placementOffset;
         GameObject effect = (GameObject)Instantiate(buildManager.sellEffect, GetBuildPosition() + offset, Quaternion.identity);
         Destroy(effect, 5f);

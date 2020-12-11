@@ -1,8 +1,8 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-[System.Serializable]
-public class TowerBlueprint
+[CreateAssetMenu]
+public class TowerBlueprint : ScriptableObject
 {
     public GameObject prefab;
     public GameObject upgradedPrefab;
@@ -15,6 +15,7 @@ public class TowerBlueprint
     {
         return cost / 2;
     }
+
     
 
 }

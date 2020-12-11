@@ -14,13 +14,13 @@ public class TowerUI : MonoBehaviour
     public GameObject towerUnlockPanel;
     public Button placeTowerButton; 
 
-    void Awake()
+    void Start()
     {
-        towerCostText = GetComponent<TextMeshProUGUI>();
+        
         towerCostText.text = "£" + tower.cost.ToString();
 
-        //towerUnlockText = GetComponent<TextMeshProUGUI>();
-        //towerUnlockText.text = "Unlock Tower at Level " + tower.unlockAtLevel.ToString();
+        
+        towerUnlockText.text = "Unlock Tower at Level " + tower.unlockAtLevel.ToString();
         towerUnlockPanel.gameObject.SetActive(true);
         placeTowerButton.interactable = false;
     }

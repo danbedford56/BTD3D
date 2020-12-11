@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0bab2882f867b481bb264d0929f106d4, type: 3}
+  m_Name: Turret
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 2508148441631401046, guid: 13db209a4a51c4c62b78a4a6b052d7a7, type: 3}
+  upgradedPrefab: {fileID: 2952500201675280008, guid: a74e91b45b6ab467b9b1dfef94babe4c, type: 3}
+  cost: 100
+  unlockAtLevel: 1
+  upgradeCost: 80
