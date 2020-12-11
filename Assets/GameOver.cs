@@ -16,6 +16,7 @@ public class GameOver : MonoBehaviour
     public void Retry()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        RoundSystem.roundOngoing = false;
     }
 
     public void Menu()
