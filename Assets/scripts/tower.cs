@@ -1,12 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 public class tower : MonoBehaviour
 {
-
     private Transform target;
-
     [Header("Turret Attributes")]
     public float fireRate = 1f;
     private float fireCountdown = 0f;
@@ -15,13 +12,21 @@ public class tower : MonoBehaviour
     public Vector3 placementOffset;
 
     [Header("Setup")]
-    public GameObject bulletPrefab;
     public Transform firePoint;
     public string enemyTag = "Enemy";
     public float turnSpeed = 10f;
     public Transform rotationPoint;
+
+    [Header("Gun")]
+    public GameObject bulletPrefab;
     public AudioSource shotSound;
 
+    [Header("Laser")]
+    public bool useLaser = false;
+    public LineRenderer lineRenderer;
+    public ParticleSystem impactEffect;
+
+    private float enemySpeed = 0f;
 
     private void Start()
     {
@@ -42,11 +47,22 @@ public class tower : MonoBehaviour
                 nearestEnemy = enemy;
             }
         }
-
         if (nearestEnemy != null && smallestDistance <= range)
         {
+            if (target != null && enemySpeed > 0)
+            {
+                target.GetComponent<Enemy>().speed = enemySpeed;
+            }
+            enemySpeed = nearestEnemy.GetComponent<Enemy>().speed;
+            print("!!!!" + enemySpeed);
             target = nearestEnemy.transform;
-        } else {
+        }
+        else
+        {
+            if (target != null && enemySpeed > 0)
+            {
+                target.GetComponent<Enemy>().speed = enemySpeed;
+            }
             target = null;
         }
     }
@@ -55,25 +71,65 @@ public class tower : MonoBehaviour
     {
         if (target == null)
         {
+            if (useLaser)
+            {
+                if (lineRenderer.enabled)
+                {
+                    lineRenderer.enabled = false;
+                    impactEffect.Stop();
+                }
+            }
             return;
         }
 
+        LockOn();
+
+        if (useLaser)
+        {
+            Laser();
+        }
+        else
+        {
+            if (fireCountdown <= 0f)
+            {
+                Shoot();
+                fireCountdown = 1f / fireRate;
+            }
+            fireCountdown -= Time.deltaTime;
+        }
+    }
+
+    void LockOn()
+    {
         // Match rotation
         Vector3 direction = target.position - transform.position;
-
         Quaternion lookRotation = Quaternion.LookRotation(direction);
         Vector3 rotation = Quaternion.Lerp(rotationPoint.rotation, lookRotation, Time.deltaTime * turnSpeed).eulerAngles;
         rotationPoint.rotation = Quaternion.Euler(0f, rotation.y, 0f);
+    }
 
-        //Firing
-        if (fireCountdown <= 0f)
+    void Laser()
+    {
+        LaserBeam();
+        target.GetComponent<Enemy>().speed = 3f;
+    }
+
+    void LaserBeam()
+    {
+        if (!lineRenderer.enabled)
         {
-            Shoot();
-            fireCountdown = 1f / fireRate;
-
+            lineRenderer.enabled = true;
+            impactEffect.Play();
         }
 
-        fireCountdown -= Time.deltaTime;
+        lineRenderer.SetPosition(0, firePoint.position);
+        lineRenderer.SetPosition(1, target.position);
+
+        Vector3 dir = firePoint.position - target.position;
+
+        impactEffect.transform.position = target.position + dir.normalized;
+
+        impactEffect.transform.rotation = Quaternion.LookRotation(dir);
     }
 
     void Shoot()
