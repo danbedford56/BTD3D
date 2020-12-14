@@ -36,7 +36,7 @@ public class RoundSystem : MonoBehaviour
         {
             if (countdown <= 0f)
             {
-                if (currentWave == rounds[currentRound].waves.Length)
+                if (currentWave >= rounds[currentRound].waves.Length)
                 {
                     //StopCoroutine(SpawnWave());
                     if (enemiesAlive == 0)
