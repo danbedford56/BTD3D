@@ -23,7 +23,7 @@ public class NodeUI : MonoBehaviour
         }
         else if (target.tower)
         {
-            sellAmount.text = "SELL £" + target.towerBlueprint.GetSellAmount();
+            sellAmount.text = "SELL £" + target.sellAmount;
 
             if (!target.isUpgraded)
             {

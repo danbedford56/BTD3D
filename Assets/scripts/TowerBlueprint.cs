@@ -15,6 +15,7 @@ public class TowerBlueprint : ScriptableObject
     {
         return cost / 2;
     }
+
     
 
 }

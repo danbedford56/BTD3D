@@ -12,11 +12,11 @@ public class TowerUI : MonoBehaviour
     public TowerBlueprint tower;
     public TextMeshProUGUI towerUnlockText;
     public GameObject towerUnlockPanel;
-    public Button placeTowerButton; 
+    private Button placeTowerButton; 
 
     void Start()
     {
-        
+        placeTowerButton = GetComponent<Button>();
         towerCostText.text = "£" + tower.cost.ToString();
 
         
