@@ -159,16 +159,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1ffd03d46a78415ea0a88b2703f67e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireRate: 10
+  fireRate: 7
   range: 20
-  damage: 15
+  damage: 12
   placementOffset: {x: -1, y: 2.5, z: 0}
-  bulletPrefab: {fileID: 5489050379409287731, guid: 99427cdeecca14f3f8c4195510f60daa, type: 3}
   firePoint: {fileID: 8427678817610181606}
   enemyTag: Enemy
   turnSpeed: 10
   rotationPoint: {fileID: 7450795050986081399}
+  bulletPrefab: {fileID: 5489050379409287731, guid: 99427cdeecca14f3f8c4195510f60daa, type: 3}
   shotSound: {fileID: 4378558672739232936}
+  useLaser: 0
+  lineRenderer: {fileID: 0}
+  impactEffect: {fileID: 0}
 --- !u!82 &4378558672739232936
 AudioSource:
   m_ObjectHideFlags: 0
