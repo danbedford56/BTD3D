@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 961c3bdfed7a443c19e804314bac5c34, type: 3}
-  m_Name: Test6
+  m_Name: Round4
   m_EditorClassIdentifier: 
   waves:
   - enemies:
@@ -26,4 +26,11 @@ MonoBehaviour:
     - {fileID: 3051445590783190525, guid: cd107feca385044968fb062349cce613, type: 3}
     - {fileID: 3051445590783190525, guid: 0c68d581f6fc84829856e1a4dc361929, type: 3}
     numOfEnemies: 0500000005000000
-  timeBetweenWaves: 5
+  - enemies:
+    - {fileID: 3051445590783190525, guid: cd107feca385044968fb062349cce613, type: 3}
+    - {fileID: 3051445590783190525, guid: 0c68d581f6fc84829856e1a4dc361929, type: 3}
+    numOfEnemies: 0300000005000000
+  - enemies:
+    - {fileID: 3051445590783190525, guid: cd107feca385044968fb062349cce613, type: 3}
+    numOfEnemies: 06000000
+  timeBetweenWaves: 7
