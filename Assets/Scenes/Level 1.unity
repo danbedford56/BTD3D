@@ -4580,7 +4580,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: cost
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -2915660403136715541, guid: 5a4c7ef611f814983abd62a58c4eedd2, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 5a4c7ef611f814983abd62a58c4eedd2, type: 3}
 --- !u!1001 &417015127
 PrefabInstance:
@@ -5384,7 +5385,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: cost
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -2915660403136715541, guid: 5a4c7ef611f814983abd62a58c4eedd2, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 5a4c7ef611f814983abd62a58c4eedd2, type: 3}
 --- !u!1 &497496348
 GameObject:
@@ -5998,24 +6000,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e6a2e334ede540b29a08aa9a17c1d40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  turret:
-    prefab: {fileID: 2508148441631401046, guid: 13db209a4a51c4c62b78a4a6b052d7a7, type: 3}
-    upgradedPrefab: {fileID: 2952500201675280008, guid: a74e91b45b6ab467b9b1dfef94babe4c, type: 3}
-    cost: 100
-    unlockAtLevel: 0
-    upgradeCost: 80
-  missileLauncher:
-    prefab: {fileID: 1886937652998191807, guid: 3248c6540a1cc4407aba1ec7e4d09db3, type: 3}
-    upgradedPrefab: {fileID: 6255610199449597349, guid: 6cb38ffd6681d44a9a2cb021037c908f, type: 3}
-    cost: 200
-    unlockAtLevel: 0
-    upgradeCost: 160
-  plagueDoctor:
-    prefab: {fileID: 811215798286111113, guid: e5feb0dc795e5488886685e6a364d5a8, type: 3}
-    upgradedPrefab: {fileID: 0}
-    cost: 800
-    unlockAtLevel: 3
-    upgradeCost: 0
+  turret: {fileID: 11400000, guid: e4c3d8a8b889e427b9c1c47b5473439a, type: 2}
+  missileLauncher: {fileID: 11400000, guid: 1331a104da8e9400cae0ce5cbb76af9c, type: 2}
+  plagueDoctor: {fileID: 11400000, guid: 46e82f9c487ea4a06a56454be1d1f133, type: 2}
 --- !u!1001 &518863103
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6291,7 +6278,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6623741161139500457, guid: 2aeed3437634f4992a5f87cf23e01a00, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -9.8
+      value: -9.799988
       objectReference: {fileID: 0}
     - target: {fileID: 6623741161139500457, guid: 2aeed3437634f4992a5f87cf23e01a00, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -10626,7 +10613,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6659846373819117578, guid: 28a3c4a83e48649db8089ce537b582a3, type: 3}
   m_PrefabInstance: {fileID: 1577505070}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1650552533}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
@@ -10985,7 +10972,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: cost
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -2915660403136715541, guid: 5a4c7ef611f814983abd62a58c4eedd2, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 5a4c7ef611f814983abd62a58c4eedd2, type: 3}
 --- !u!114 &1114965810 stripped
 MonoBehaviour:
@@ -11286,7 +11274,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6659846373819117578, guid: 28a3c4a83e48649db8089ce537b582a3, type: 3}
   m_PrefabInstance: {fileID: 6659846372441239666}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1463060953}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
@@ -14058,6 +14046,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 635d31d46b6534cc5967233694ef83cc, type: 3}
+--- !u!1 &1463060953 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6659846373819117572, guid: 28a3c4a83e48649db8089ce537b582a3, type: 3}
+  m_PrefabInstance: {fileID: 6659846372441239666}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1463060955
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1463060953}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af2dac0e283c941f8849934125ea0203, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  towerCostText: {fileID: 2059050936}
+  tower: {fileID: 11400000, guid: e4c3d8a8b889e427b9c1c47b5473439a, type: 2}
+  towerUnlockText: {fileID: 1114965810}
+  towerUnlockPanel: {fileID: 590377765}
 --- !u!1001 &1471054654
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15729,6 +15738,27 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 604217891878080182, guid: 69e9ea3c770c143d99ab13319468fa84, type: 3}
   m_PrefabInstance: {fileID: 1639453356}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1650552533 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6659846373819117572, guid: 28a3c4a83e48649db8089ce537b582a3, type: 3}
+  m_PrefabInstance: {fileID: 1577505070}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1650552535
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1650552533}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af2dac0e283c941f8849934125ea0203, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  towerCostText: {fileID: 175087219}
+  tower: {fileID: 11400000, guid: 46e82f9c487ea4a06a56454be1d1f133, type: 2}
+  towerUnlockText: {fileID: 1699608948}
+  towerUnlockPanel: {fileID: 222124955}
 --- !u!1001 &1651932733
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20199,6 +20229,27 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 604217891878080182, guid: 69e9ea3c770c143d99ab13319468fa84, type: 3}
   m_PrefabInstance: {fileID: 2094197416}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2094593492 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6659846373819117572, guid: 28a3c4a83e48649db8089ce537b582a3, type: 3}
+  m_PrefabInstance: {fileID: 506475744}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2094593494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2094593492}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af2dac0e283c941f8849934125ea0203, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  towerCostText: {fileID: 621577987}
+  tower: {fileID: 11400000, guid: 1331a104da8e9400cae0ce5cbb76af9c, type: 2}
+  towerUnlockText: {fileID: 425539616}
+  towerUnlockPanel: {fileID: 1548314045}
 --- !u!1 &2096537679
 GameObject:
   m_ObjectHideFlags: 0
@@ -20460,7 +20511,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6659846373819117578, guid: 28a3c4a83e48649db8089ce537b582a3, type: 3}
   m_PrefabInstance: {fileID: 506475744}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 2094593492}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
