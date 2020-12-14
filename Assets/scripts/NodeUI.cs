@@ -14,7 +14,8 @@ public class NodeUI : MonoBehaviour
     public void SetTarget(Node _target)
     {
         target = _target;
-        transform.position = target.GetBuildPosition();
+        Vector3 offset = new Vector3(0, 2, 0);
+        transform.position = target.GetBuildPosition() + offset;
 
         if (target.nature)
         {
