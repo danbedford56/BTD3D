@@ -5689,9 +5689,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rounds:
-  - {fileID: 11400000, guid: 266fadb2c4ee84b4289b85ec05015068, type: 2}
+  - {fileID: 11400000, guid: 288bbea347a544444965880e35e45595, type: 2}
   - {fileID: 11400000, guid: 3705e1bbbbc484a4f8b7684ecf9b8466, type: 2}
   - {fileID: 11400000, guid: 57d7a9031f1ea47138556581ebe7a31d, type: 2}
+  - {fileID: 11400000, guid: 288bbea347a544444965880e35e45595, type: 2}
   spawnPoint: {fileID: 1351012207}
   startRoundButton: {fileID: 1889490399}
   shopPanel: {fileID: 517810879}
@@ -5736,7 +5737,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69f4caa84c81049b685802fa76f7fa38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingMonees: 400
+  startingMonees: 175
   startingLives: 200
   GameOverUI: {fileID: 506210864}
 --- !u!114 &630782942
