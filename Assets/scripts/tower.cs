@@ -54,7 +54,6 @@ public class tower : MonoBehaviour
                 target.GetComponent<Enemy>().speed = enemySpeed;
             }
             enemySpeed = nearestEnemy.GetComponent<Enemy>().speed;
-            print("!!!!" + enemySpeed);
             target = nearestEnemy.transform;
         }
         else
