@@ -15,5 +15,5 @@ MonoBehaviour:
   prefab: {fileID: 5261364589028572490, guid: de1e69ef96532492086d20c05d5fbe60, type: 3}
   upgradedPrefab: {fileID: 0}
   cost: 200
-  unlockAtLevel: 3
+  unlockAtLevel: 1
   upgradeCost: 100
