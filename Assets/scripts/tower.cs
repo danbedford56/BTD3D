@@ -26,6 +26,8 @@ public class tower : MonoBehaviour
     public LineRenderer lineRenderer;
     public ParticleSystem impactEffect;
 
+    private float enemySpeed = 0f;
+
     private void Start()
     {
         InvokeRepeating("UpdateTarget", 0f, 0.5f);
@@ -47,10 +49,20 @@ public class tower : MonoBehaviour
         }
         if (nearestEnemy != null && smallestDistance <= range)
         {
+            if (target != null && enemySpeed > 0)
+            {
+                target.GetComponent<Enemy>().speed = enemySpeed;
+            }
+            enemySpeed = nearestEnemy.GetComponent<Enemy>().speed;
+            print("!!!!" + enemySpeed);
             target = nearestEnemy.transform;
         }
         else
         {
+            if (target != null && enemySpeed > 0)
+            {
+                target.GetComponent<Enemy>().speed = enemySpeed;
+            }
             target = null;
         }
     }
@@ -97,6 +109,12 @@ public class tower : MonoBehaviour
     }
 
     void Laser()
+    {
+        LaserBeam();
+        target.GetComponent<Enemy>().speed = 3f;
+    }
+
+    void LaserBeam()
     {
         if (!lineRenderer.enabled)
         {
