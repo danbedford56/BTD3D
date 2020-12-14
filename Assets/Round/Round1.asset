@@ -15,7 +15,7 @@ MonoBehaviour:
   waves:
   - enemies:
     - {fileID: 2573174211152477566, guid: 4cd03e2bd3fe1455dbab3e321e497a3a, type: 3}
-    numOfEnemies: 03000000
+    numOfEnemies: 04000000
   - enemies:
     - {fileID: 2573174211152477566, guid: 4cd03e2bd3fe1455dbab3e321e497a3a, type: 3}
     - {fileID: 3051445590783190525, guid: 29845766849d24942bd24dd977547d64, type: 3}

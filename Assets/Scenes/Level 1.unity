@@ -5965,7 +5965,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 57d7a9031f1ea47138556581ebe7a31d, type: 2}
   - {fileID: 11400000, guid: 288bbea347a544444965880e35e45595, type: 2}
   - {fileID: 11400000, guid: b02c6977dd35540d2b56c4cb22f21d6e, type: 2}
-
+  - {fileID: 11400000, guid: c88996647ccf84f4aab01a1bab2f23d0, type: 2}
   spawnPoint: {fileID: 1656127711}
   startRoundButton: {fileID: 242138450}
   shopPanel: {fileID: 1454852191}
@@ -6010,7 +6010,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69f4caa84c81049b685802fa76f7fa38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingMonees: 175
+  startingMonees: 165
   startingLives: 200
   GameOverUI: {fileID: 826982195}
 --- !u!114 &630782942
@@ -11883,7 +11883,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1141286528320632, guid: 079567f63ed456b4b992b5546f77a064, type: 3}
       propertyPath: m_Name
-      value: brokentombstone4
+      value: StartPoint
       objectReference: {fileID: 0}
     - target: {fileID: 4575038148145992, guid: 079567f63ed456b4b992b5546f77a064, type: 3}
       propertyPath: m_RootOrder
