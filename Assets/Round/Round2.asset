@@ -10,14 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 961c3bdfed7a443c19e804314bac5c34, type: 3}
-  m_Name: Test
+  m_Name: Round2
   m_EditorClassIdentifier: 
   waves:
   - enemies:
     - {fileID: 2573174211152477566, guid: 4cd03e2bd3fe1455dbab3e321e497a3a, type: 3}
-    numOfEnemies: 03000000
+    - {fileID: 3051445590783190525, guid: cd107feca385044968fb062349cce613, type: 3}
+    numOfEnemies: 0200000001000000
+  - enemies:
+    - {fileID: 3051445590783190525, guid: 29845766849d24942bd24dd977547d64, type: 3}
+    - {fileID: 3051445590783190525, guid: cd107feca385044968fb062349cce613, type: 3}
+    numOfEnemies: 0300000003000000
   - enemies:
     - {fileID: 2573174211152477566, guid: 4cd03e2bd3fe1455dbab3e321e497a3a, type: 3}
     - {fileID: 3051445590783190525, guid: 29845766849d24942bd24dd977547d64, type: 3}
-    numOfEnemies: 0200000003000000
+    - {fileID: 3051445590783190525, guid: cd107feca385044968fb062349cce613, type: 3}
+    numOfEnemies: 010000000100000005000000
   timeBetweenWaves: 5

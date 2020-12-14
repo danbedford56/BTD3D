@@ -5934,6 +5934,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 3705e1bbbbc484a4f8b7684ecf9b8466, type: 2}
   - {fileID: 11400000, guid: 57d7a9031f1ea47138556581ebe7a31d, type: 2}
   - {fileID: 11400000, guid: 288bbea347a544444965880e35e45595, type: 2}
+  - {fileID: 11400000, guid: b02c6977dd35540d2b56c4cb22f21d6e, type: 2}
   spawnPoint: {fileID: 1351012207}
   startRoundButton: {fileID: 242138450}
   shopPanel: {fileID: 1454852191}
