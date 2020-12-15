@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 1396058713908621916, guid: 6ba90ec724a284ea1b87728ef4df56e2, type: 3}
   upgradedPrefab: {fileID: 0}
-  cost: 100
+  cost: 75
   unlockAtLevel: 1
   upgradeCost: 5000

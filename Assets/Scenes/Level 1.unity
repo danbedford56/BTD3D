@@ -6566,10 +6566,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69f4caa84c81049b685802fa76f7fa38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingMonees: 165
+  startingMonees: 1650
   startingLives: 200
   GameOverUI: {fileID: 826982195}
-  WinningUI: {fileID: 0}
+  WinningUI: {fileID: 1995782806}
 --- !u!114 &630782942
 MonoBehaviour:
   m_ObjectHideFlags: 0
