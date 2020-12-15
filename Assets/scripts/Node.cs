@@ -16,6 +16,7 @@ public class Node : MonoBehaviour
     public Material rangeCircleMaterial;
     [HideInInspector]
     public bool isUpgraded;
+    private bool isRoadTower = false;
 
     BuildManager buildManager;
     
@@ -46,8 +47,6 @@ public class Node : MonoBehaviour
 
     public void SellTower()
     {
-       
-
         PlayerStatus.monees += sellAmount;
         Debug.Log("sold for " + sellAmount);
         Vector3 offset = towerBlueprint.prefab.GetComponent<tower>().placementOffset;
@@ -105,27 +104,94 @@ public class Node : MonoBehaviour
     //When the user hovers over a node, it there isnt a tower there, it will display a hover color. 
     void OnMouseEnter()
     {
+        tower towerCom = null;
+        if (!buildManager.CanBuild) { return; }
+       
+        if (buildManager.GetTowerToBuild().prefab.GetComponent<tower>())
+        {
+            towerCom = buildManager.GetTowerToBuild().prefab.GetComponent<tower>();
+            isRoadTower = false;
+            RangeTowerCheck(towerCom);
+        }
+        if (towerCom == null)
+        {
+            isRoadTower = true;
+            RoadTowerCheck();
+        }
+    }
+
+    void RoadTowerCheck()
+    {
         if (!RoundSystem.roundOngoing)
         {
-            if (!buildManager.CanBuild)
-                return;
+            if (!CheckForRoads())
+            {
+                rend.material.color = notEnoughMoneesColor;
+            }
+            else if (tower == null && nature == null)
+            {
+                rend.material.color = hoverColor;
+            }
+        }
+    }
 
+    void RangeTowerCheck(tower towerCom)
+    {
+        if (!RoundSystem.roundOngoing)
+        {
             if (!buildManager.HasMonees || nature)
             {
                 rend.material.color = notEnoughMoneesColor;
             }
-            else
+            else if (tower == null && nature == null)
             {
-                if (tower == null && nature == null && buildManager.GetTowerToBuild().prefab.GetComponent<tower>())
-                {
-                    tower towerCom = buildManager.GetTowerToBuild().prefab.GetComponent<tower>();
-                    Draw.DrawCircle(gameObject, towerCom.range);
-                    rend.material.color = hoverColor;
-                } else if (tower == null && nature == null) {
-                    rend.material.color = hoverColor;
-                }
+                Draw.DrawCircle(gameObject, towerCom.range);
+                rend.material.color = hoverColor;
+            }
+            
+        }
+    }
+
+    private enum roadDirection { Left, Right, Up, Down}
+    private roadDirection currentRoadDirection = roadDirection.Down;
+
+    bool CheckForRoads()
+    {
+        bool roadTowerCanPlace = false;
+        RaycastHit ray;
+        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out ray, 5f))
+        {
+            if (ray.collider.tag == "Road")
+            {
+                roadTowerCanPlace = true;
+                currentRoadDirection = roadDirection.Up;
             }
         }
+        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.left), out ray, 5f))
+        {
+            if (ray.collider.tag == "Road")
+            {
+                roadTowerCanPlace = true;
+                currentRoadDirection = roadDirection.Left;
+            }
+        }
+        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.back), out ray, 5f))
+        {
+            if (ray.collider.tag == "Road")
+            {
+                roadTowerCanPlace = true;
+                currentRoadDirection = roadDirection.Down;
+            }
+        }
+        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.right), out ray, 5f))
+        {
+            if (ray.collider.tag == "Road")
+            {
+                roadTowerCanPlace = true;
+                currentRoadDirection = roadDirection.Right;
+            }
+        }
+        return roadTowerCanPlace;
     }
 
 
@@ -151,8 +217,16 @@ public class Node : MonoBehaviour
                 buildManager.SelectNode(this);
                 return; 
             }
-            if (!buildManager.CanBuild)
-                return;
+
+            if (isRoadTower)
+            {
+                if (!CheckForRoads())
+                    return;
+            } else
+            {
+                if (!buildManager.CanBuild)
+                    return;
+            }
 
             BuildTower(buildManager.GetTowerToBuild());
    
@@ -166,7 +240,6 @@ public class Node : MonoBehaviour
         if (PlayerStatus.monees < blueprint.cost)
         {
             InsufficientMoney();
-            Debug.Log("Let player know on UI that they have insufficient monees");
             return;
         }
 
@@ -180,17 +253,48 @@ public class Node : MonoBehaviour
         {
             offset = blueprint.prefab.GetComponent<Sanitizer>().placementOffset;
         }
-        
+        Quaternion towerRot = Quaternion.identity;
+        if (isRoadTower)
+        {
+            towerRot = FindTowerRotation();
+        }
 
-        GameObject _tower = (GameObject)Instantiate(blueprint.prefab, GetBuildPosition() + offset, Quaternion.identity);
+        GameObject _tower = (GameObject)Instantiate(blueprint.prefab, GetBuildPosition() + offset, towerRot);
         tower = _tower;
         towerBlueprint = blueprint;
         GameObject effect = (GameObject)Instantiate(buildManager.buildEffect,GetBuildPosition() + offset, Quaternion.identity);
         Destroy(effect, 5f);
         Destroy(this.GetComponent<LineRenderer>());
-        Debug.Log("Tower built! Money left!" + PlayerStatus.monees);
-        
     }
+
+    Quaternion FindTowerRotation()
+    {
+        switch (currentRoadDirection)
+        {
+            case roadDirection.Up:
+            {
+                print("its up");
+                return new Quaternion(0, 90, 0, 90);
+            }
+            case roadDirection.Down:
+            {
+                return new Quaternion(0, -90, 0, 90);
+            }
+            case roadDirection.Left:
+            {
+                return Quaternion.identity;
+            }
+            case roadDirection.Right:
+            {
+                return new Quaternion(0, 180, 0, 0);
+            }
+            default:
+            {
+                return Quaternion.identity;
+            }
+        }
+    }
+
     //This sets the build position to the node position plus the tower offset which is the distance above the node. 
     public Vector3 GetBuildPosition()
     {

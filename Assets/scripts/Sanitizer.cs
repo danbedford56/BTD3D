@@ -8,7 +8,6 @@ public class Sanitizer : MonoBehaviour
     //private Animator animations;
     public GameObject sanitiser;
     private float fireCountdown = 5f;
-    private float sanitiserCountdown = 5f;
     public ParticleSystem sprayEffect;
     public Vector3 placementOffset;
 
@@ -21,14 +20,7 @@ public class Sanitizer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (sanitiser.activeSelf)
-        {
-            if (sanitiserCountdown <= 0f)
-            {
-                sanitiser.SetActive(false);
-            }
-            sanitiserCountdown -= Time.deltaTime;
-        }
+
         if (RoundSystem.roundOngoing)
         {
             if (fireCountdown <= 0f)
