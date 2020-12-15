@@ -26,6 +26,7 @@ public class tower : MonoBehaviour
     public LineRenderer lineRenderer;
     public ParticleSystem impactEffect;
 
+
     private float enemySpeed = 0f;
 
     private void Start()
