@@ -1588,7 +1588,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 7
-  health: 3400
+  health: 3700
   moneesOnDeath: 50
   damageOverTime: 0
 --- !u!135 &8179796328322455744

@@ -25,6 +25,7 @@ public class tower : MonoBehaviour
     public bool useLaser = false;
     public LineRenderer lineRenderer;
     public ParticleSystem impactEffect;
+    public float slowSpeed = 3f; 
 
 
     private float enemySpeed = 0f;
@@ -111,7 +112,7 @@ public class tower : MonoBehaviour
     void Laser()
     {
         LaserBeam();
-        target.GetComponent<Enemy>().speed = 3f;
+        target.GetComponent<Enemy>().speed = slowSpeed;
     }
 
     void LaserBeam()
