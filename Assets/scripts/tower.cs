@@ -25,14 +25,19 @@ public class tower : MonoBehaviour
     public bool useLaser = false;
     public LineRenderer lineRenderer;
     public ParticleSystem impactEffect;
-    public float slowSpeed = 3f; 
+    public float slowSpeed = 3f;
 
+
+    [Header("PlagueDoctor")]
+    private Animator plagueDoctorThrow; 
 
     private float enemySpeed = 0f;
 
     private void Start()
     {
         InvokeRepeating("UpdateTarget", 0f, 0.5f);
+        plagueDoctorThrow = GetComponent<Animator>();
+        plagueDoctorThrow.SetBool("isTargetting", false);
     }
 
     void UpdateTarget()
@@ -80,6 +85,7 @@ public class tower : MonoBehaviour
                     impactEffect.Stop();
                 }
             }
+            //plagueDoctorThrow.SetBool("isTargetting", false);
             return;
         }
 
@@ -137,6 +143,7 @@ public class tower : MonoBehaviour
     {
         GameObject bulletToShoot = (GameObject)Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         Bullet bullet = bulletToShoot.GetComponent<Bullet>();
+        plagueDoctorThrow.SetBool("isTargetting", true);
         if (bullet != null)
         {
             bullet.damage = damage;

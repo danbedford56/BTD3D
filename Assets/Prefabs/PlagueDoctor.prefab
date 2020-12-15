@@ -698,7 +698,7 @@ Animator:
   m_GameObject: {fileID: 811215798286111113}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: d45e5c2a692ed15448d53b608d30088c, type: 3}
-  m_Controller: {fileID: 9100000, guid: cca1bbbbe0a39b2488e16c53c96a9bfb, type: 2}
+  m_Controller: {fileID: 9100000, guid: e08fc0c118dcd4631b5cc7da1ac7ff49, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -732,6 +732,7 @@ MonoBehaviour:
   useLaser: 0
   lineRenderer: {fileID: 0}
   impactEffect: {fileID: 0}
+  slowSpeed: 3
 --- !u!1 &811215798286111115
 GameObject:
   m_ObjectHideFlags: 0
