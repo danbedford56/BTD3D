@@ -1,15 +1,20 @@
 ﻿using UnityEngine;
+using TMPro;
 
 public class Node : MonoBehaviour
 {
     public Color hoverColor;
     public Color notEnoughMoneesColor;
+    public GameObject insufficientMoneeys;
+    private Transform uiCanvas;
 
     [HideInInspector]
     public GameObject tower;
     public GameObject nature;
     [HideInInspector]
     public TowerBlueprint towerBlueprint;
+    
+
     [HideInInspector]
     public Material rangeCircleMaterial;
     [HideInInspector]
@@ -17,6 +22,7 @@ public class Node : MonoBehaviour
 
     BuildManager buildManager;
     
+
     private Color startColor;
     private Renderer rend;
 
@@ -39,6 +45,7 @@ public class Node : MonoBehaviour
         buildManager = BuildManager.instance;
         rend = GetComponent<Renderer>();
         startColor = rend.material.color;
+        uiCanvas = GameObject.FindGameObjectWithTag("UI").transform;
     }
 
     public void SellTower()
@@ -60,6 +67,10 @@ public class Node : MonoBehaviour
     {
         if (PlayerStatus.monees < towerBlueprint.upgradeCost)
         {
+            Vector3 position = new Vector3(500f, 1031f, 0f);
+            Quaternion rot = new Quaternion(0, 0, 0, 0);
+            GameObject text = (GameObject)Instantiate(insufficientMoneeys, position, rot, uiCanvas);
+            Destroy(text, 3f);
             Debug.Log("Let player know on UI that they have insufficient monees to upgrade");
             return;
         }
@@ -152,6 +163,10 @@ public class Node : MonoBehaviour
         
         if (PlayerStatus.monees < blueprint.cost)
         {
+            Vector3 position = new Vector3(500f, 1031f, 0f);
+            Quaternion rot = new Quaternion(0, 0, 0, 0);
+            GameObject text = (GameObject)Instantiate(insufficientMoneeys, position, rot, uiCanvas);
+            Destroy(text, 3f);
             Debug.Log("Let player know on UI that they have insufficient monees");
             return;
         }
