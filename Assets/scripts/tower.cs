@@ -29,15 +29,18 @@ public class tower : MonoBehaviour
 
 
     [Header("PlagueDoctor")]
-    private Animator plagueDoctorThrow; 
+    private Animator plagueDoctorThrow;
+    public bool isAnimated = false;
 
     private float enemySpeed = 0f;
 
     private void Start()
     {
         InvokeRepeating("UpdateTarget", 0f, 0.5f);
-        plagueDoctorThrow = GetComponent<Animator>();
-        plagueDoctorThrow.SetBool("isTargetting", false);
+        if (isAnimated)
+        {
+            plagueDoctorThrow = GetComponent<Animator>();
+        }
     }
 
     void UpdateTarget()
@@ -143,7 +146,9 @@ public class tower : MonoBehaviour
     {
         GameObject bulletToShoot = (GameObject)Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         Bullet bullet = bulletToShoot.GetComponent<Bullet>();
-        plagueDoctorThrow.SetBool("isTargetting", true);
+        if (isAnimated) {
+            plagueDoctorThrow.SetBool("isTargetting", true);
+        }
         if (bullet != null)
         {
             bullet.damage = damage;

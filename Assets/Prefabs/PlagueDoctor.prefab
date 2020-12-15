@@ -733,6 +733,7 @@ MonoBehaviour:
   lineRenderer: {fileID: 0}
   impactEffect: {fileID: 0}
   slowSpeed: 3
+  isAnimated: 1
 --- !u!1 &811215798286111115
 GameObject:
   m_ObjectHideFlags: 0
