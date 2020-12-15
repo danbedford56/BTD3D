@@ -4,13 +4,6 @@ using UnityEngine;
 
 public class RoadObject : MonoBehaviour
 {
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     private void OnTriggerEnter(Collider enemy)
     {
         if (enemy.GetComponent<Enemy>())
