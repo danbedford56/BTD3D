@@ -11,9 +11,12 @@ public class TowerBlueprint : ScriptableObject
     public int upgradeCost;
 
     //These variables are set in the shop in unity. 
-    public int GetSellAmount()
+    public int sellAmount
     {
-        return cost / 2;
+        get
+        {
+            return cost / 2;
+        }
     }
 
     
