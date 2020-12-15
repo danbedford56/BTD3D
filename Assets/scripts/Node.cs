@@ -4,6 +4,8 @@ public class Node : MonoBehaviour
 {
     public Color hoverColor;
     public Color notEnoughMoneesColor;
+    public GameObject insufficientMoneeys;
+    private Transform uiCanvas;
 
     [HideInInspector]
     public GameObject tower;
@@ -39,6 +41,7 @@ public class Node : MonoBehaviour
         buildManager = BuildManager.instance;
         rend = GetComponent<Renderer>();
         startColor = rend.material.color;
+        uiCanvas = GameObject.FindGameObjectWithTag("UI").transform;
     }
 
     public void SellTower()
@@ -55,11 +58,19 @@ public class Node : MonoBehaviour
         towerBlueprint = null;
     }
 
+    public void InsufficientMoney()
+    {
+        Vector3 position = new Vector3(900f, 1081f, 0f);
+        Quaternion rot = new Quaternion(0, 0, 0, 0);
+        GameObject text = (GameObject)Instantiate(insufficientMoneeys, position, rot, uiCanvas);
+        Destroy(text, 3f);
+    }
 
     public void UpgradeTower()
     {
         if (PlayerStatus.monees < towerBlueprint.upgradeCost)
         {
+            InsufficientMoney();
             Debug.Log("Let player know on UI that they have insufficient monees to upgrade");
             return;
         }
@@ -154,6 +165,7 @@ public class Node : MonoBehaviour
         
         if (PlayerStatus.monees < blueprint.cost)
         {
+            InsufficientMoney();
             Debug.Log("Let player know on UI that they have insufficient monees");
             return;
         }
