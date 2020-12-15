@@ -4,10 +4,11 @@ using UnityEngine;
 public class Shop : MonoBehaviour
 {
     BuildManager buildManager;
-    public  TowerBlueprint turret; //We need to make a new TowerBlueprint variable for each tower. 
-    public  TowerBlueprint missileLauncher;
-    public  TowerBlueprint laser;
-    public  TowerBlueprint plagueDoctor;
+    public TowerBlueprint turret; //We need to make a new TowerBlueprint variable for each tower. 
+    public TowerBlueprint missileLauncher;
+    public TowerBlueprint laser;
+    public TowerBlueprint plagueDoctor;
+    public TowerBlueprint handSanitizer; 
 
     void Start()
     {
@@ -40,4 +41,11 @@ public class Shop : MonoBehaviour
         Debug.Log("PlagueDoctor selected");
         buildManager.SelectTowerToBuild(plagueDoctor);
     }
+
+    public void SelectHandSanitizer()
+    {
+        Debug.Log("Hand Sanitizer selected");
+        buildManager.SelectTowerToBuild(handSanitizer);
+    }
+
 }
