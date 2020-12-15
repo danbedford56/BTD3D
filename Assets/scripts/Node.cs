@@ -105,10 +105,12 @@ public class Node : MonoBehaviour
             }
             else
             {
-                if (tower == null && nature == null)
+                if (tower == null && nature == null && buildManager.GetTowerToBuild().prefab.GetComponent<tower>())
                 {
                     tower towerCom = buildManager.GetTowerToBuild().prefab.GetComponent<tower>();
                     Draw.DrawCircle(gameObject, towerCom.range);
+                    rend.material.color = hoverColor;
+                } else if (tower == null && nature == null) {
                     rend.material.color = hoverColor;
                 }
             }
