@@ -20,7 +20,7 @@ public class TowerUI : MonoBehaviour
         towerCostText.text = "£" + tower.cost.ToString();
 
         
-        towerUnlockText.text = "Unlock Tower at Level " + tower.unlockAtLevel.ToString();
+        towerUnlockText.text = "Unlock Tower at Round " + tower.unlockAtLevel.ToString();
         towerUnlockPanel.gameObject.SetActive(true);
         placeTowerButton.interactable = false;
     }

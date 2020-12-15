@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 961c3bdfed7a443c19e804314bac5c34, type: 3}
+  m_Name: Round3
+  m_EditorClassIdentifier: 
+  waves:
+  - enemies:
+    - {fileID: 3051445590783190525, guid: 0c68d581f6fc84829856e1a4dc361929, type: 3}
+    numOfEnemies: 05000000
+  - enemies:
+    - {fileID: 3051445590783190525, guid: 29845766849d24942bd24dd977547d64, type: 3}
+    numOfEnemies: 04000000
+  - enemies:
+    - {fileID: 2573174211152477566, guid: 4cd03e2bd3fe1455dbab3e321e497a3a, type: 3}
+    - {fileID: 3051445590783190525, guid: 29845766849d24942bd24dd977547d64, type: 3}
+    - {fileID: 3051445590783190525, guid: 0c68d581f6fc84829856e1a4dc361929, type: 3}
+    numOfEnemies: 030000000300000003000000
+  - enemies:
+    - {fileID: 3051445590783190525, guid: cd107feca385044968fb062349cce613, type: 3}
+    - {fileID: 3051445590783190525, guid: 29845766849d24942bd24dd977547d64, type: 3}
+    - {fileID: 3051445590783190525, guid: 0c68d581f6fc84829856e1a4dc361929, type: 3}
+    numOfEnemies: 030000000500000005000000
+  timeBetweenWaves: 5
