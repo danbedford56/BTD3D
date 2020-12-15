@@ -3271,7 +3271,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3584743650999658309, guid: c32c98580081845158011720d0d067e6, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 124.1
+      value: 55
       objectReference: {fileID: 0}
     - target: {fileID: 3584743650999658311, guid: c32c98580081845158011720d0d067e6, type: 3}
       propertyPath: m_Sprite
@@ -3327,7 +3327,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3584743651207212723, guid: c32c98580081845158011720d0d067e6, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 128
+      value: 55
       objectReference: {fileID: 0}
     - target: {fileID: 3584743651207212725, guid: c32c98580081845158011720d0d067e6, type: 3}
       propertyPath: m_Sprite
@@ -3451,7 +3451,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6563701641911023108, guid: c32c98580081845158011720d0d067e6, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -0.00005828294
       objectReference: {fileID: 0}
     - target: {fileID: 7913694972780413612, guid: c32c98580081845158011720d0d067e6, type: 3}
       propertyPath: m_AnchorMax.y
@@ -6322,6 +6322,7 @@ MonoBehaviour:
   startingMonees: 165
   startingLives: 200
   GameOverUI: {fileID: 826982195}
+  WinningUI: {fileID: 0}
 --- !u!114 &630782942
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16673,7 +16674,7 @@ GameObject:
   - component: {fileID: 1995782807}
   - component: {fileID: 1995782808}
   m_Layer: 0
-  m_Name: Winning Panel
+  m_Name: WinningUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
