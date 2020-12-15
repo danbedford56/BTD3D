@@ -391,7 +391,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7692f29b6eb64aa38feaab2d7ee28e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sanitiser: {fileID: 0}
+  sanitiser: {fileID: 323371446887213541}
   sprayEffect: {fileID: 432478557045788267}
 --- !u!1 &1489818031244735222
 GameObject:

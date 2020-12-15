@@ -31,7 +31,7 @@ public class Enemy : MonoBehaviour
             getNewWaypoint();
         }
 
-        if (damageOverTimeCountdown <= 0) { health -= damageOverTime; damageOverTimeCountdown = 5f; }
+        if (damageOverTimeCountdown <= 0) { takeDamage(damageOverTime); damageOverTimeCountdown = 5f; }
 
         damageOverTimeCountdown -= Time.deltaTime;
     }
