@@ -157,7 +157,16 @@ public class Node : MonoBehaviour
         }
 
         PlayerStatus.monees -= blueprint.cost;
-        Vector3 offset = blueprint.prefab.GetComponent<tower>().placementOffset;
+        Vector3 offset = Vector3.zero;
+
+        if (blueprint.prefab.GetComponent<tower>())
+        {
+            offset = blueprint.prefab.GetComponent<tower>().placementOffset;
+        } else
+        {
+            offset = blueprint.prefab.GetComponent<Sanitizer>().placementOffset;
+        }
+        
 
         GameObject _tower = (GameObject)Instantiate(blueprint.prefab, GetBuildPosition() + offset, Quaternion.identity);
         tower = _tower;

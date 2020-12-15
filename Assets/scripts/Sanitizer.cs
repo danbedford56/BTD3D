@@ -10,6 +10,7 @@ public class Sanitizer : MonoBehaviour
     private float fireCountdown = 5f;
     private float sanitiserCountdown = 5f;
     public ParticleSystem sprayEffect;
+    public Vector3 placementOffset;
 
     // Start is called before the first frame update
     void Start()
