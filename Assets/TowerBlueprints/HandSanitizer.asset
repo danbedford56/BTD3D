@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0bab2882f867b481bb264d0929f106d4, type: 3}
+  m_Name: HandSanitizer
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 1396058713908621916, guid: 6ba90ec724a284ea1b87728ef4df56e2, type: 3}
+  upgradedPrefab: {fileID: 0}
+  cost: 100
+  unlockAtLevel: 1
+  upgradeCost: 5000
