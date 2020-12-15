@@ -10,6 +10,8 @@ public class Enemy : MonoBehaviour
     public float health = 20f;
     public int moneesOnDeath = 20;
 
+    public int damageOverTime = 0;
+    private float damageOverTimeCountdown = 5f;
 
     private Transform target;
     private int wayPointIndex = 0;
@@ -28,6 +30,10 @@ public class Enemy : MonoBehaviour
         {
             getNewWaypoint();
         }
+
+        if (damageOverTimeCountdown <= 0) { health -= damageOverTime; damageOverTimeCountdown = 5f; }
+
+        damageOverTimeCountdown -= Time.deltaTime;
     }
 
     void getNewWaypoint()
