@@ -9,6 +9,7 @@ public class Sanitizer : MonoBehaviour
     public GameObject sanitiser;
     private float fireCountdown = 5f;
     private float sanitiserCountdown = 5f;
+    public ParticleSystem sprayEffect;
 
     // Start is called before the first frame update
     void Start()
@@ -23,6 +24,7 @@ public class Sanitizer : MonoBehaviour
         {
             if (fireCountdown <= 0f)
             {
+                sprayEffect.Play();
                 Squeeze();
                 fireCountdown = 10f;
             }
