@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Laser
   m_EditorClassIdentifier: 
   prefab: {fileID: 5261364589028572490, guid: de1e69ef96532492086d20c05d5fbe60, type: 3}
-  upgradedPrefab: {fileID: 0}
+  upgradedPrefab: {fileID: 5261364589028572490, guid: 570132994adb742498c1098b1131694c, type: 3}
   cost: 75
   unlockAtLevel: 2
   upgradeCost: 75
