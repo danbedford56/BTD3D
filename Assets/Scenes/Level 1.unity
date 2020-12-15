@@ -3421,6 +3421,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3584743651913513568, guid: c32c98580081845158011720d0d067e6, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 3584743651913513571, guid: c32c98580081845158011720d0d067e6, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 0.55078125
@@ -3437,6 +3441,10 @@ PrefabInstance:
       propertyPath: laser
       value: 
       objectReference: {fileID: 11400000, guid: ed57bf6fdd1344c88a5061e3fdf4e7a0, type: 2}
+    - target: {fileID: 3584743652391087350, guid: c32c98580081845158011720d0d067e6, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 4126244665647144533, guid: c32c98580081845158011720d0d067e6, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
