@@ -11,6 +11,7 @@ public class PlayerStatus : MonoBehaviour
     public static float Rounds;
   
     public GameObject GameOverUI;
+    public GameObject WinningUI;
 
     void Start()
     {
@@ -35,6 +36,11 @@ public class PlayerStatus : MonoBehaviour
             Die();
             RoundSystem.roundOngoing = false;
         }
+
+        if (RoundSystem.currentRound == 5 && RoundSystem.enemiesAlive == 0)
+        {
+            WinningUI.SetActive(true);
+        }
     }
 
     void Die()
@@ -43,3 +49,4 @@ public class PlayerStatus : MonoBehaviour
         GameOverUI.SetActive(true);
     }
 }
+
