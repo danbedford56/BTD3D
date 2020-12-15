@@ -3395,7 +3395,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3584743652387875961, guid: c32c98580081845158011720d0d067e6, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3584743652391087245, guid: c32c98580081845158011720d0d067e6, type: 3}
       propertyPath: laser
