@@ -300,7 +300,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1574065992}
         m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
-        m_MethodName: Play
+        m_MethodName: Playlev2
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1189,7 +1189,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1574065992}
         m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
-        m_MethodName: Play
+        m_MethodName: PlayLev1
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1360,7 +1360,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 318712c0ca6ce42fda74b6a0ff7791c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelToLoad: Level 1
+  level1: Level1
+  level2: Level2
 --- !u!4 &1574065993
 Transform:
   m_ObjectHideFlags: 0
