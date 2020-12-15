@@ -26,12 +26,14 @@ public class PlayerStatus : MonoBehaviour
         if (Input.GetKeyDown("e"))
         {
             Die();
+            RoundSystem.roundOngoing = false;
         }
 
         if (lives <= 0)
         {
             lives = 0;
             Die();
+            RoundSystem.roundOngoing = false;
         }
     }
 

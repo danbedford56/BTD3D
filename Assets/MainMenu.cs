@@ -5,10 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-    public string levelToLoad = "Level 1";
+    public string levelToLoad = "Level1";
     public void Play()
     {
         SceneManager.LoadScene(levelToLoad);
+        RoundSystem.roundOngoing = false;
     }
 
     public void Quit()
