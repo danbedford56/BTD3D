@@ -27,11 +27,11 @@ public class Node : MonoBehaviour
         get {
             if (isUpgraded)
             {
-                return towerBlueprint.GetSellAmount() + (towerBlueprint.upgradeCost / 2);
+                return towerBlueprint.sellAmount + (towerBlueprint.upgradeCost / 2);
             }
             else
             {
-                return towerBlueprint.GetSellAmount();
+                return towerBlueprint.sellAmount;
             }
         }
     }
@@ -159,7 +159,7 @@ public class Node : MonoBehaviour
     {
         bool roadTowerCanPlace = false;
         RaycastHit ray;
-        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out ray, 5f))
+        if (Physics.Raycast(transform.position, Vector3.forward, out ray, 5f))
         {
             if (ray.collider.tag == "Road")
             {
@@ -167,7 +167,7 @@ public class Node : MonoBehaviour
                 currentRoadDirection = roadDirection.Up;
             }
         }
-        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.left), out ray, 5f))
+        if (Physics.Raycast(transform.position, Vector3.left, out ray, 5f))
         {
             if (ray.collider.tag == "Road")
             {
@@ -175,7 +175,7 @@ public class Node : MonoBehaviour
                 currentRoadDirection = roadDirection.Left;
             }
         }
-        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.back), out ray, 5f))
+        if (Physics.Raycast(transform.position, Vector3.back, out ray, 5f))
         {
             if (ray.collider.tag == "Road")
             {
@@ -183,7 +183,7 @@ public class Node : MonoBehaviour
                 currentRoadDirection = roadDirection.Down;
             }
         }
-        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.right), out ray, 5f))
+        if (Physics.Raycast(transform.position, Vector3.right, out ray, 5f))
         {
             if (ray.collider.tag == "Road")
             {
