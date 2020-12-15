@@ -236,7 +236,6 @@ public class Node : MonoBehaviour
 
     void BuildTower (TowerBlueprint blueprint)
     {
-        
         if (PlayerStatus.monees < blueprint.cost)
         {
             InsufficientMoney();
