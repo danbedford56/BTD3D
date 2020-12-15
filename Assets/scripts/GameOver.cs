@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class GameOver : MonoBehaviour
 {
     public Text roundsText;
+    public string pageToLoad = "Main Menu";
 
     void OnEnable()
     {
@@ -21,6 +22,7 @@ public class GameOver : MonoBehaviour
 
     public void Menu()
     {
+        SceneManager.LoadScene(pageToLoad);
         Debug.Log("Got to Menu.");
     }
 }
