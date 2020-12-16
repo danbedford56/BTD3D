@@ -2,14 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class NodeUI : MonoBehaviour
 {
     public GameObject ui;
     public GameObject upgradeButton;
     private Node target;
-    public Text sellAmount;
-    public Text upgradeAmount;
+    public TextMeshProUGUI towerTitle;
+    public TextMeshProUGUI towerFireRate;
+    public TextMeshProUGUI towerDamage;
+    public TextMeshProUGUI towerRange;
+    public TextMeshProUGUI sellAmount;
+    public TextMeshProUGUI upgradeAmount;
+    
 
     public void SetTarget(Node _target)
     {
@@ -17,25 +23,25 @@ public class NodeUI : MonoBehaviour
         Vector3 offset = new Vector3(0, 2, 0);
         transform.position = target.GetBuildPosition() + offset;
 
-        if (target.nature)
+        tower towerStats = null;
+        if (!target.isUpgraded)
         {
-            sellAmount.text = "Destroy £" + target.nature.GetComponent<Nature>().costToDestroy;
+            upgradeAmount.text = "UPGRADE £" + target.towerBlueprint.upgradeCost;
+            upgradeButton.SetActive(true);
+            towerStats = target.tower.GetComponent<tower>();
+        }
+        else
+        {
             upgradeButton.SetActive(false);
+            towerStats = target.towerBlueprint.upgradedPrefab.GetComponent<tower>();
         }
-        else if (target.tower)
-        {
-            sellAmount.text = "SELL £" + target.sellAmount;
 
-            if (!target.isUpgraded)
-            {
-                upgradeAmount.text = "UPGRADE £" + target.towerBlueprint.upgradeCost;
-                upgradeButton.SetActive(true);
-            }
-            else
-            {
-                upgradeButton.SetActive(false);
-            }
-        }
+        towerTitle.text = target.towerBlueprint.prefab.name;
+        towerFireRate.text = "Fire rate: " + towerStats.fireRate + "/sec";
+        towerDamage.text = "Damage: " + towerStats.damage;
+        towerRange.text = "Range: " + towerStats.range + "m";
+        sellAmount.text = "SELL £" + target.sellAmount;
+       
 
         ui.SetActive(true);
 
@@ -48,18 +54,7 @@ public class NodeUI : MonoBehaviour
 
     public void Sell()
     {
-        if (target.nature)
-        {
-            int natureCost = target.nature.GetComponent<Nature>().costToDestroy;
-            if (PlayerStatus.monees >= natureCost)
-            {
-                target.DestroyNature();
-            }
-        }
-        else if (target.tower)
-        {
-            target.SellTower();
-        }
+        target.SellTower();
         BuildManager.instance.DeselectNode();
     }
 
