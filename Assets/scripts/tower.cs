@@ -102,7 +102,15 @@ public class tower : MonoBehaviour
         {
             if (fireCountdown <= 0f)
             {
-                Shoot();
+                
+                if (isAnimated)
+                {
+                    plagueDoctorThrow.SetBool("isTargetting", true);
+
+                }else
+                {
+                    Shoot();
+                }
                 fireCountdown = 1f / fireRate;
             }
             fireCountdown -= Time.deltaTime;
@@ -146,9 +154,6 @@ public class tower : MonoBehaviour
     {
         GameObject bulletToShoot = (GameObject)Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         Bullet bullet = bulletToShoot.GetComponent<Bullet>();
-        if (isAnimated) {
-            plagueDoctorThrow.SetBool("isTargetting", true);
-        }
         if (bullet != null)
         {
             bullet.damage = damage;
@@ -164,5 +169,10 @@ public class tower : MonoBehaviour
     {
         Gizmos.color = Color.green;
         Gizmos.DrawWireSphere(transform.position, range);
+    }
+
+    void turnOffPlagueDoctorAnimation()
+    {
+        plagueDoctorThrow.SetBool("isTargetting", false);
     }
 }
