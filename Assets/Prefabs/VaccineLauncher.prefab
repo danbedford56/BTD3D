@@ -59,6 +59,8 @@ MonoBehaviour:
   useLaser: 0
   lineRenderer: {fileID: 0}
   impactEffect: {fileID: 0}
+  slowSpeed: 3
+  isAnimated: 0
 --- !u!82 &4882005419003748321
 AudioSource:
   m_ObjectHideFlags: 0
