@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class Node : MonoBehaviour
 {
@@ -210,29 +211,33 @@ public class Node : MonoBehaviour
     //When the user clicks on a node, if there is not a tower there already, and there is a tower selected to place, it places a tower on the node. 
     void OnMouseDown()
     {
-
-        if (!RoundSystem.roundOngoing)
+        if (!EventSystem.current.IsPointerOverGameObject())
         {
-            if (tower != null || nature != null)
+            if (!RoundSystem.roundOngoing)
             {
-                buildManager.SelectNode(this);
-                return; 
-            }
-
-            if (isRoadTower)
-            {
-                if (!CheckForRoads())
+                if (tower != null || nature != null)
+                {
+                    buildManager.SelectNode(this);
                     return;
-            } else
-            {
-                if (!buildManager.CanBuild)
-                    return;
-            }
+                }
 
-            BuildTower(buildManager.GetTowerToBuild());
-   
-            buildManager.SelectTowerToBuild(null);
+                if (isRoadTower)
+                {
+                    if (!CheckForRoads())
+                        return;
+                }
+                else
+                {
+                    if (!buildManager.CanBuild)
+                        return;
+                }
+
+                BuildTower(buildManager.GetTowerToBuild());
+
+                buildManager.SelectTowerToBuild(null);
+            }
         }
+        
     }
 
     void BuildTower (TowerBlueprint blueprint)
