@@ -37,7 +37,7 @@ public class PlayerStatus : MonoBehaviour
             RoundSystem.roundOngoing = false;
         }
 
-        if (RoundSystem.currentRound == 5 && RoundSystem.enemiesAlive == 0)
+        if (RoundSystem.currentRound == 6 && RoundSystem.enemiesAlive == 0)
         {
             WinningUI.SetActive(true);
         }
