@@ -55,6 +55,7 @@ public class Node : MonoBehaviour
 
         Destroy(tower);
         towerBlueprint = null;
+        isUpgraded = false;
     }
 
     public void InsufficientMoney()
