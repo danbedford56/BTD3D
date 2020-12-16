@@ -17440,7 +17440,7 @@ PrefabInstance:
       objectReference: {fileID: 650537218}
     - target: {fileID: 260330384820869196, guid: 99c166ed815694a3eaf561442500fc9d, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 260330384820869197, guid: 99c166ed815694a3eaf561442500fc9d, type: 3}
       propertyPath: m_LocalRotation.w
@@ -17511,14 +17511,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 260330385716533210, guid: 99c166ed815694a3eaf561442500fc9d, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 84.931465
-      objectReference: {fileID: 0}
-    - target: {fileID: 260330385716533210, guid: 99c166ed815694a3eaf561442500fc9d, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 49.284462
-      objectReference: {fileID: 0}
-    - target: {fileID: 260330385716533210, guid: 99c166ed815694a3eaf561442500fc9d, type: 3}
       propertyPath: m_LocalPosition.z
       value: -5.29
       objectReference: {fileID: 0}
@@ -17541,10 +17533,6 @@ PrefabInstance:
     - target: {fileID: 260330385716533211, guid: 99c166ed815694a3eaf561442500fc9d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: NatureUI, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 260330386677655225, guid: 99c166ed815694a3eaf561442500fc9d, type: 3}
-      propertyPath: m_fontSize
-      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 260330386677655225, guid: 99c166ed815694a3eaf561442500fc9d, type: 3}
       propertyPath: m_fontSizeBase
