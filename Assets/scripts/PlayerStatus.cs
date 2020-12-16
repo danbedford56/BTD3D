@@ -47,6 +47,7 @@ public class PlayerStatus : MonoBehaviour
     {
         Debug.Log("You lost");
         GameOverUI.SetActive(true);
+        RoundSystem.currentRound = 0;
     }
 }
 
