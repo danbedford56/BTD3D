@@ -8,6 +8,7 @@ public class BuildManager : MonoBehaviour
     public GameObject buildEffect;
     public GameObject sellEffect;
     public NodeUI nodeUI;
+    public NatureUI natureUI;
 
     //When the game starts, if there is already a BuildManager instance, there is a message in the console log. 
     void Awake()
@@ -33,7 +34,13 @@ public class BuildManager : MonoBehaviour
             Draw.DrawCircle(node.gameObject, towerCom.range);
         }
         towerToBuild = null;
-        nodeUI.SetTarget(node);
+        if (node.nature)
+        {
+            natureUI.SetTarget(node);
+        } else if (node.tower)
+        {
+            nodeUI.SetTarget(node);
+        }
     }
 
     public void DeselectNode()
@@ -46,6 +53,7 @@ public class BuildManager : MonoBehaviour
             }
             selectedNode = null;
             nodeUI.Hide();
+            natureUI.Hide();
         }
     }
     //Set the tower we want to build as the tower we give it. 
